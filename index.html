@@ -326,8 +326,35 @@
   // ── RELOJ ─────────────────────────────────────────────────
   function pad(n){ return n<10?'0'+n:''+n; }
 
-  function updateClock() {
-    var now=new Date();
+function updateClock() {
+  var now = new Date();
+
+  var clockReal = document.getElementById('clock-real');
+  if (clockReal) {
+    clockReal.innerHTML =
+      pad(now.getHours()) +
+      '<span class="sep-blink">:</span>' +
+      pad(now.getMinutes());
+  }
+
+  var clockGhost = document.getElementById('clock-ghost');
+  if (clockGhost) {
+    clockGhost.innerHTML = '88<span>:</span>88';
+  }
+
+  var dateDay = document.getElementById('date-day');
+  if (dateDay) {
+    dateDay.innerHTML = DIAS[now.getDay()];
+  }
+
+  var dateFull = document.getElementById('date-full');
+  if (dateFull) {
+    dateFull.innerHTML =
+      pad(now.getDate()) + '-' +
+      MESES[now.getMonth()] + '-' +
+      now.getFullYear();
+  }
+}    var now=new Date();
     document.getElementById('clock-real').innerHTML =
       pad(now.getHours())+'<span class="sep-blink">:</span>'+pad(now.getMinutes());
     document.getElementById('clock-ghost').innerHTML = '88<span>:</span>88';
