@@ -1,444 +1,529 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <title>CASIO</title>
-  <style>
-    @font-face {
-      font-family: 'DSEG7';
-      src: url('https://cdn.jsdelivr.net/npm/dseg@0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Regular.woff2') format('woff2'),
-           url('https://cdn.jsdelivr.net/npm/dseg@0.46.0/fonts/DSEG7-Classic/DSEG7Classic-Regular.woff') format('woff');
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <!-- Estilos de tema inyectados por JS -->
-  <style id="theme-style"></style>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-    html, body { width:100%; height:100%; overflow:hidden; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    body {
-      display:-webkit-flex; display:flex;
-      -webkit-align-items:center; align-items:center;
-      -webkit-justify-content:center; justify-content:center;
-      font-family: 'Share Tech Mono','Courier New',monospace;
-    }
+<title>Casio Valdivia</title>
 
-    .watch {
-      width:98vw; height:96vh;
-      border-width:2px; border-style:solid; border-radius:6px;
-      position:relative;
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:column; flex-direction:column;
-      overflow:hidden;
-    }
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0a0a08;
+}
 
-    .watch-inner {
-      position:absolute; inset:5px;
-      border-width:1px; border-style:solid; border-radius:4px;
-      pointer-events:none; z-index:1;
-    }
+body {
+    font-family: "Courier New", monospace;
+    color: #b8d870;
+}
 
-    /* HEADER */
-    .header {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:row; flex-direction:row;
-      -webkit-align-items:center; align-items:center;
-      -webkit-justify-content:space-between; justify-content:space-between;
-      padding:1.2vh 2.5vw 0.8vh;
-      border-bottom-width:1px; border-bottom-style:solid;
-      position:relative; z-index:2;
-    }
-    .h-label { font-size:1vw; letter-spacing:0.22em; text-transform:uppercase; }
-    .modes { display:-webkit-flex; display:flex; gap:0.6vw; }
-    .mode-btn {
-      font-family:'Share Tech Mono','Courier New',monospace;
-      font-size:0.85vw; letter-spacing:0.15em; cursor:pointer;
-      background:none; border-width:1px; border-style:solid;
-      padding:0.3vh 0.7vw; border-radius:2px;
-      -webkit-user-select:none; user-select:none;
-    }
+#watch {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    width: 96%;
+    height: 96%;
+    box-sizing: border-box;
+    border: 2px solid #4a6228;
+    background: #141f0c;
+}
 
-    /* HORA */
-    .time-block {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:column; flex-direction:column;
-      -webkit-align-items:center; align-items:center;
-      -webkit-justify-content:center; justify-content:center;
-      -webkit-flex:1.3; flex:1.3;
-      border-bottom-width:1px; border-bottom-style:solid;
-      position:relative; z-index:2;
-    }
+/* CABECERA */
 
-    .lcd-wrap { position:relative; display:inline-block; line-height:1; }
-    .lcd-ghost {
-      font-family:'DSEG7','Courier New',monospace;
-      font-size:20vw; letter-spacing:0.04em;
-      position:absolute; top:0; left:0; pointer-events:none;
-    }
-    .lcd-real {
-      font-family:'DSEG7','Courier New',monospace;
-      font-size:20vw; letter-spacing:0.04em; position:relative;
-    }
-    .sep-blink {
-      -webkit-animation:blink 1s step-end infinite;
-      animation:blink 1s step-end infinite;
-    }
-    @-webkit-keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.06} }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.06} }
+#header {
+    height: 8%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #4a6228;
+    position: relative;
+}
 
-    .date-row { display:-webkit-flex; display:flex; gap:4vw; margin-top:5vh; }
-    .date-chip { font-size:3vw; letter-spacing:0.22em; text-transform:uppercase; }
+#brand {
+    position: absolute;
+    left: 2%;
+    top: 30%;
+    font-size: 1.2vw;
+    letter-spacing: 0.35em;
+}
 
-    /* DOS COLUMNAS */
-    .bottom {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:row; flex-direction:row;
-      -webkit-flex:1; flex:1;
-      position:relative; z-index:2; min-height:0;
-    }
-    .panel {
-      -webkit-flex:1; flex:1;
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:column; flex-direction:column;
-      padding:1.5vh 2.5vw; overflow:hidden;
-    }
-    .panel-left { border-right-width:1px; border-right-style:solid; }
-    .panel-label {
-      font-size:0.9vw; letter-spacing:0.3em; text-transform:uppercase;
-      margin-bottom:1vh;
-      border-bottom-width:1px; border-bottom-style:solid;
-      padding-bottom:0.5vh;
-    }
+#mode {
+    position: absolute;
+    right: 2%;
+    top: 22%;
+}
 
-    /* CLIMA */
-    .temp-wrap { position:relative; display:inline-block; line-height:1; }
-    .temp-ghost {
-      font-family:'DSEG7','Courier New',monospace;
-      font-size:9vw; letter-spacing:0.04em;
-      position:absolute; top:0; left:0;
-    }
-    .temp-real {
-      font-family:'DSEG7','Courier New',monospace;
-      font-size:9vw; letter-spacing:0.04em; position:relative;
-    }
-    .temp-real sup { font-size:2.5vw; vertical-align:super; opacity:0.75; font-family:'Share Tech Mono','Courier New',monospace; }
-    .w-desc { margin-top:0.8vh; font-size:1.05vw; letter-spacing:0.1em; text-transform:uppercase; }
-    .w-meta { margin-top:0.6vh; font-size:1.05vw; line-height:1.9; }
+.modeButton {
+    display: inline-block;
+    border: 1px solid #4a6228;
+    padding: 3px 7px;
+    margin-left: 4px;
+    font-size: 1vw;
+    cursor: pointer;
+}
 
-    /* AGENDA */
-    .ev-list {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:column; flex-direction:column;
-      gap:0.55vh; overflow:hidden;
-    }
-    .ev {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:column; flex-direction:column;
-      gap:0.2vh; padding:0.5vh 0.8vw;
-      border-width:1px; border-style:solid;
-      background:rgba(0,0,0,0.2);
-    }
-    .ev-meta {
-      display:-webkit-flex; display:flex;
-      -webkit-flex-direction:row; flex-direction:row;
-      -webkit-align-items:center; align-items:center;
-      gap:0.8vw;
-    }
-    .ev-date { font-size:0.9vw; -webkit-flex-shrink:0; flex-shrink:0; min-width:4.5vw; letter-spacing:0.05em; }
-    .ev-time { font-size:0.9vw; -webkit-flex-shrink:0; flex-shrink:0; letter-spacing:0.04em; }
-    .ev-cal  { font-size:0.8vw; letter-spacing:0.06em; margin-left:auto; -webkit-flex-shrink:0; flex-shrink:0; }
-    .ev-title { font-size:1.15vw; letter-spacing:0.04em; white-space:normal; word-break:break-word; line-height:1.3; }
-    .msg { font-size:1.1vw; letter-spacing:0.1em; text-transform:uppercase; }
-  </style>
+/* RELOJ */
+
+#clockArea {
+    height: 57%;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid #4a6228;
+}
+
+#clock {
+    position: absolute;
+    width: 100%;
+    top: 8%;
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 17vw;
+    line-height: 0.9;
+    font-weight: bold;
+    letter-spacing: -0.08em;
+    text-shadow: 0 0 14px #9acb38;
+}
+
+#date {
+    position: absolute;
+    width: 100%;
+    bottom: 8%;
+    text-align: center;
+    font-size: 2.8vw;
+    font-weight: bold;
+    letter-spacing: 0.22em;
+}
+
+/* CLIMA */
+
+#weatherArea {
+    height: 35%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 2% 3%;
+}
+
+#weatherTitle {
+    font-size: 1.15vw;
+    letter-spacing: 0.28em;
+    margin-bottom: 1%;
+}
+
+#weatherContent {
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+#temperature {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 8vw;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 0 10px #9acb38;
+}
+
+#degree {
+    font-size: 2.5vw;
+}
+
+#weatherDetails {
+    position: absolute;
+    left: 27%;
+    top: 8%;
+    font-size: 1.5vw;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+}
+
+#weatherStatus {
+    position: absolute;
+    right: 2%;
+    top: 8%;
+    width: 35%;
+    text-align: right;
+    font-size: 2vw;
+    letter-spacing: 0.12em;
+}
+
+/* TEMAS */
+
+.green {
+    background: #0a0a08 !important;
+    color: #b8d870 !important;
+}
+
+.blue {
+    background: #07131c !important;
+    color: #70b8d8 !important;
+}
+
+.white {
+    background: #eeeeea !important;
+    color: #111111 !important;
+}
+
+</style>
 </head>
+
 <body>
-<div class="watch" id="watch">
-  <div class="watch-inner" id="watch-inner"></div>
 
-  <div class="header" id="header">
-    <span class="h-label" id="h-left">&#9679; CASIO &nbsp;&#183;&nbsp; WORLD TIME</span>
-    <span class="h-label" id="seconds">--</span>
-    <div class="modes">
-      <button class="mode-btn" id="btn-green" onclick="setTheme('green')">GRN</button>
-      <button class="mode-btn" id="btn-blue"  onclick="setTheme('blue')">BLU</button>
-      <button class="mode-btn" id="btn-mono"  onclick="setTheme('mono')">B&amp;W</button>
-    </div>
-  </div>
+<div id="watch">
 
-  <div class="time-block" id="time-block">
-    <div class="lcd-wrap">
-      <div class="lcd-ghost" id="clock-ghost">88<span>:</span>88</div>
-      <div class="lcd-real"  id="clock-real">00<span class="sep-blink">:</span>00</div>
-    </div>
-    <div class="date-row">
-      <div class="date-chip" id="date-day">DOM</div>
-      <div class="date-chip" id="date-full">--</div>
-    </div>
-  </div>
+    <div id="header">
+        <div id="brand">
+            ● CASIO &nbsp;&nbsp; WORLD TIME
+        </div>
 
-  <div class="bottom">
-    <div class="panel panel-left" id="panel-left">
-      <div class="panel-label" id="panel-label-left">&#9650; WEATHER / VALDIVIA</div>
-      <div id="weather-section"><div class="msg" id="w-msg">LOADING_</div></div>
+        <div id="mode">
+            <span class="modeButton" onclick="setTheme('green')">GRN</span>
+            <span class="modeButton" onclick="setTheme('blue')">BLU</span>
+            <span class="modeButton" onclick="setTheme('white')">B&amp;W</span>
+        </div>
     </div>
-    
-  </div>
 
- 
+    <div id="clockArea">
+
+        <div id="clock">
+            --:--
+        </div>
+
+        <div id="date">
+            CARGANDO
+        </div>
+
+    </div>
+
+    <div id="weatherArea">
+
+        <div id="weatherTitle">
+            ▲ WEATHER / VALDIVIA
+        </div>
+
+        <div id="weatherContent">
+
+            <div id="temperature">
+                --<span id="degree">°C</span>
+            </div>
+
+            <div id="weatherDetails">
+                SENSACIÓN: <span id="feels">--</span>°C<br>
+                HUMEDAD: <span id="humidity">--</span>%<br>
+                VIENTO: <span id="wind">--</span> KM/H
+            </div>
+
+            <div id="weatherStatus">
+                CARGANDO...
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 <script>
-  var LAT=-39.8142, LON=-73.2459;
-  var DIAS =['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
-  var MESES=['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
-  var WMO={0:'CLEAR',1:'MOSTLY CLR',2:'PART CLOUD',3:'OVERCAST',
-    45:'FOG',48:'FREEZE FOG',51:'DRIZZLE',53:'DRIZZLE+',55:'DRIZZLE++',
-    61:'RAIN',63:'RAIN+',65:'RAIN++',71:'SNOW',73:'SNOW+',75:'SNOW++',
-    80:'SHOWERS',81:'SHOWERS+',82:'SHOWERS++',85:'SNOWFALL',
-    95:'THUNDER',96:'HAIL',99:'HAIL+'};
 
-  // ── TEMAS (colores directos, sin CSS variables) ────────────
-  var THEMES = {
-    green: {
-      bodyBg:    '#0A0A08',
-      screenBg:  '#141F0C',
-      segOn:     '#B8D870',
-      segOff:    '#1E2E10',
-      segDim:    '#4A6228',
-      border:    '#3A5220',
-      label:     '#527030',
-      glow:      'rgba(168,210,80,0.35)',
-      scanline:  'rgba(0,0,0,0.22)'
-    },
-    blue: {
-      bodyBg:    '#05080F',
-      screenBg:  '#0A1020',
-      segOn:     '#70B8FF',
-      segOff:    '#0E1E32',
-      segDim:    '#204060',
-      border:    '#1A4070',
-      label:     '#2A5080',
-      glow:      'rgba(80,160,255,0.35)',
-      scanline:  'rgba(0,0,0,0.22)'
-    },
-    mono: {
-      bodyBg:    '#050505',
-      screenBg:  '#0F0F0F',
-      segOn:     '#DEDEDE',
-      segOff:    '#1C1C1C',
-      segDim:    '#4A4A4A',
-      border:    '#333333',
-      label:     '#444444',
-      glow:      'rgba(210,210,210,0.2)',
-      scanline:  'rgba(0,0,0,0.28)'
+/*
+   CASIO DASHBOARD
+   VALDIVIA, CHILE
+   Compatible con navegadores antiguos
+*/
+
+/* Coordenadas de Valdivia */
+
+var LAT = -39.8142;
+var LON = -73.2459;
+
+
+/* Nombres en español */
+
+var DIAS = [
+    "DOM",
+    "LUN",
+    "MAR",
+    "MIÉ",
+    "JUE",
+    "VIE",
+    "SÁB"
+];
+
+var MESES = [
+    "ENE",
+    "FEB",
+    "MAR",
+    "ABR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AGO",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DIC"
+];
+
+
+/* Añadir cero */
+
+function pad(numero) {
+
+    if (numero < 10) {
+        return "0" + numero;
     }
-  };
 
-  function applyTheme(t) {
-    var c = THEMES[t];
-    // Body
-    document.body.style.backgroundColor = c.bodyBg;
-    // Watch
-    var w = document.getElementById('watch');
-    w.style.backgroundColor = c.screenBg;
-    w.style.borderColor = c.border;
-    w.style.backgroundImage = 'repeating-linear-gradient(0deg,'+c.scanline+' 0px,'+c.scanline+' 1px,transparent 1px,transparent 3px)';
-    // Inner border
-    document.getElementById('watch-inner').style.borderColor = c.segOff;
-    // Header
-    var header = document.getElementById('header');
-    header.style.borderBottomColor = c.segOff;
-    colorEls('h-label', c.label);
-    // Mode buttons
-    var btnIds = ['green','blue','mono'];
-    for (var i=0;i<btnIds.length;i++) {
-      var btn = document.getElementById('btn-'+btnIds[i]);
-      if (btn) {
-        btn.style.color = btnIds[i]===t ? c.segOn : c.segDim;
-        btn.style.borderColor = btnIds[i]===t ? c.segDim : c.segOff;
-      }
+    return numero;
+}
+
+
+/* RELOJ */
+
+function actualizarReloj() {
+
+    var ahora = new Date();
+
+    var hora =
+        pad(ahora.getHours()) +
+        ":" +
+        pad(ahora.getMinutes());
+
+    document.getElementById("clock").innerHTML = hora;
+
+    var fecha =
+        DIAS[ahora.getDay()] +
+        " " +
+        pad(ahora.getDate()) +
+        "-" +
+        MESES[ahora.getMonth()] +
+        "-" +
+        ahora.getFullYear();
+
+    document.getElementById("date").innerHTML = fecha;
+}
+
+
+/* DESCRIPCIÓN DEL CLIMA */
+
+function descripcionClima(codigo) {
+
+    if (codigo === 0) {
+        return "DESPEJADO";
     }
-    // Time block
-    document.getElementById('time-block').style.borderBottomColor = c.segOff;
-    // Clock ghost/real
-    document.getElementById('clock-ghost').style.color = c.segOff;
-    var cr = document.getElementById('clock-real');
-    cr.style.color = c.segOn;
-    cr.style.textShadow = '0 0 16px '+c.glow+', 0 0 40px '+c.glow;
-    // Date chips
-    colorEls('date-chip', c.segDim);
-    var df = document.getElementById('date-full');
-    if (df) df.style.color = c.segOn;
-    // Panels
-    document.getElementById('panel-left').style.borderRightColor = c.segOff;
-    colorEls('panel-label', c.label);
-    document.getElementById('panel-label-left').style.borderBottomColor = c.segOff;
-    document.getElementById('panel-label-right').style.borderBottomColor = c.segOff;
-    // Weather
-    applyWeatherColors(c);
-    // Agenda
-    applyAgendaColors(c);
-    // Store
-    window._theme = t;
-    window._colors = c;
-    localStorage.setItem('casio-theme', t);
-  }
 
-  function colorEls(cls, color) {
-    var els = document.getElementsByClassName(cls);
-    for (var i=0;i<els.length;i++) els[i].style.color = color;
-  }
-
-  function applyWeatherColors(c) {
-    var tg = document.querySelector('.temp-ghost');
-    var tr = document.querySelector('.temp-real');
-    var wd = document.querySelector('.w-desc');
-    var wm = document.querySelector('.w-meta');
-    if (tg) tg.style.color = c.segOff;
-    if (tr) { tr.style.color = c.segOn; tr.style.textShadow = '0 0 12px '+c.glow; }
-    if (wd) wd.style.color = c.segDim;
-    if (wm) { wm.style.color = c.label; colorBolds(wm, c.segOn); }
-    var msg = document.getElementById('w-msg');
-    if (msg) msg.style.color = c.segDim;
-  }
-
-  function applyAgendaColors(c) {
-    var evs = document.getElementsByClassName('ev');
-    for (var i=0;i<evs.length;i++) evs[i].style.borderColor = c.segOff;
-    colorEls('ev-date', c.segDim);
-    var todays = document.getElementsByClassName('ev-date today');
-    for (var i=0;i<todays.length;i++) todays[i].style.color = c.segOn;
-    colorEls('ev-time', c.label);
-    colorEls('ev-title', c.segOn);
-    colorEls('ev-cal', c.label);
-    colorEls('msg', c.segDim);
-  }
-
-  function colorBolds(el, color) {
-    var bs = el.getElementsByTagName('b');
-    for (var i=0;i<bs.length;i++) bs[i].style.color = color;
-  }
-
-  function setTheme(t) { applyTheme(t); }
-
-  // ── RELOJ ─────────────────────────────────────────────────
-  function pad(n){ return n<10?'0'+n:''+n; }
-
-function updateClock() {
-  var now = new Date();
-
-  var clockReal = document.getElementById('clock-real');
-  if (clockReal) {
-    clockReal.innerHTML =
-      pad(now.getHours()) +
-      '<span class="sep-blink">:</span>' +
-      pad(now.getMinutes());
-  }
-
-  var clockGhost = document.getElementById('clock-ghost');
-  if (clockGhost) {
-    clockGhost.innerHTML = '88<span>:</span>88';
-  }
-
-  var dateDay = document.getElementById('date-day');
-  if (dateDay) {
-    dateDay.innerHTML = DIAS[now.getDay()];
-  }
-
-  var dateFull = document.getElementById('date-full');
-  if (dateFull) {
-    dateFull.innerHTML =
-      pad(now.getDate()) + '-' +
-      MESES[now.getMonth()] + '-' +
-      now.getFullYear();
-  }
-}    var now=new Date();
-    document.getElementById('clock-real').innerHTML =
-      pad(now.getHours())+'<span class="sep-blink">:</span>'+pad(now.getMinutes());
-    document.getElementById('clock-ghost').innerHTML = '88<span>:</span>88';
-    document.getElementById('date-day').textContent = DIAS[now.getDay()];
-    document.getElementById('date-full').textContent =
-    // Re-aplicar color de fecha
-    if (window._colors) {
-      document.getElementById('date-day').style.color  = window._colors.segDim;
-      document.getElementById('date-full').style.color = window._colors.segOn;
-      document.getElementById('clock-ghost').style.color = window._colors.segOff;
-      var cr = document.getElementById('clock-real');
-      cr.style.color = window._colors.segOn;
-      cr.style.textShadow = '0 0 16px '+window._colors.glow+', 0 0 40px '+window._colors.glow;
-      document.getElementById('seconds').style.color = window._colors.label;
+    if (codigo === 1) {
+        return "MAYORMENTE DESPEJADO";
     }
-  }
 
-  // ── CLIMA ─────────────────────────────────────────────────
-  function fetchWeather() {
-    var xhr=new XMLHttpRequest();
-    xhr.open('GET','/api/weather?lat='+LAT+'&lon='+LON,true);
-    xhr.onreadystatechange=function(){
-      if(xhr.readyState!==4) return;
-      var el=document.getElementById('weather-section');
-      var c=window._colors||THEMES.green;
-      if(xhr.status===200){
-        try{
-          var d=JSON.parse(xhr.responseText),cw=d.current_weather;
-          var h=new Date().getHours();
-          var temp=Math.round(cw.temperature);
-          var sens=Math.round(d.hourly.apparent_temperature[h]!==undefined?d.hourly.apparent_temperature[h]:temp);
-          var hum=d.hourly.relativehumidity_2m[h]!==undefined?d.hourly.relativehumidity_2m[h]:'--';
-          var wind=Math.round(cw.windspeed);
-          el.innerHTML=
-            '<div class="temp-wrap">'+
-              '<div class="temp-ghost" style="color:'+c.segOff+'">88!</div>'+
-              '<div class="temp-real" style="color:'+c.segOn+';text-shadow:0 0 12px '+c.glow+'">'+temp+'<sup>°C</sup></div>'+
-            '</div>'+
-            '<div class="w-desc" style="color:'+c.segDim+'">'+(WMO[cw.weathercode]||'--')+'</div>'+
-            '<div class="w-meta" style="color:'+c.label+'">FEEL <b style="color:'+c.segOn+'">'+sens+'°</b> &nbsp; HUM <b style="color:'+c.segOn+'">'+hum+'%</b><br>WIND <b style="color:'+c.segOn+'">'+wind+' KM/H</b></div>';
-        }catch(e){el.innerHTML='<div class="msg" style="color:'+c.segDim+'">NO DATA_</div>';}
-      }else{el.innerHTML='<div class="msg" style="color:'+c.segDim+'">NO DATA_</div>';}
+    if (codigo === 2) {
+        return "PARCIALMENTE NUBLADO";
+    }
+
+    if (codigo === 3) {
+        return "NUBLADO";
+    }
+
+    if (codigo === 45 || codigo === 48) {
+        return "NIEBLA";
+    }
+
+    if (codigo >= 51 && codigo <= 57) {
+        return "LLOVIZNA";
+    }
+
+    if (codigo >= 61 && codigo <= 67) {
+        return "LLUVIA";
+    }
+
+    if (codigo >= 71 && codigo <= 77) {
+        return "NIEVE";
+    }
+
+    if (codigo >= 80 && codigo <= 82) {
+        return "CHUBASCOS";
+    }
+
+    if (codigo >= 95) {
+        return "TORMENTA";
+    }
+
+    return "CONDICIÓN VARIABLE";
+}
+
+
+/* CLIMA */
+
+function cargarClima() {
+
+    var xhr = new XMLHttpRequest();
+
+    var url =
+        "https://api.open-meteo.com/v1/forecast" +
+        "?latitude=" + LAT +
+        "&longitude=" + LON +
+        "&current_weather=true" +
+        "&hourly=relativehumidity_2m,apparent_temperature" +
+        "&timezone=America%2FSantiago";
+
+    xhr.open("GET", url, true);
+
+    xhr.onreadystatechange = function() {
+
+        if (xhr.readyState !== 4) {
+            return;
+        }
+
+        if (xhr.status !== 200) {
+
+            document.getElementById("weatherStatus").innerHTML =
+                "SIN CONEXIÓN";
+
+            return;
+        }
+
+        try {
+
+            var datos = JSON.parse(xhr.responseText);
+
+            var actual = datos.current_weather;
+
+            if (!actual) {
+                document.getElementById("weatherStatus").innerHTML =
+                    "SIN DATOS";
+                return;
+            }
+
+            var temperatura =
+                Math.round(actual.temperature);
+
+            var viento =
+                Math.round(actual.windspeed);
+
+            var codigo =
+                actual.weathercode;
+
+            document.getElementById("temperature").innerHTML =
+                temperatura +
+                '<span id="degree">°C</span>';
+
+            document.getElementById("wind").innerHTML =
+                viento;
+
+            document.getElementById("weatherStatus").innerHTML =
+                descripcionClima(codigo);
+
+
+            /*
+              Buscar hora correspondiente para humedad
+              y sensación térmica
+            */
+
+            var indice = -1;
+
+            if (datos.hourly && datos.hourly.time) {
+
+                var horaActual =
+                    actual.time.substring(0, 13);
+
+                var i;
+
+                for (i = 0; i < datos.hourly.time.length; i++) {
+
+                    if (
+                        datos.hourly.time[i].substring(0, 13)
+                        === horaActual
+                    ) {
+
+                        indice = i;
+                        break;
+                    }
+                }
+            }
+
+
+            if (indice >= 0) {
+
+                var humedad =
+                    datos.hourly.relativehumidity_2m[indice];
+
+                var sensacion =
+                    datos.hourly.apparent_temperature[indice];
+
+                document.getElementById("humidity").innerHTML =
+                    Math.round(humedad);
+
+                document.getElementById("feels").innerHTML =
+                    Math.round(sensacion);
+            }
+
+
+        } catch (error) {
+
+            document.getElementById("weatherStatus").innerHTML =
+                "ERROR DATOS";
+        }
     };
+
     xhr.send();
-  }
+}
 
-  
-  function showPassOverlay() {
-    var overlay = document.getElementById('pass-overlay');
-    var c = window._colors || THEMES.green;
-    overlay.style.background = c.bg;
-    overlay.style.display = '-webkit-flex';
-    overlay.style.display = 'flex';
-    document.getElementById('pass-label').style.color = c.segOn;
-    document.getElementById('pass-input').style.color = c.segOn;
-    document.getElementById('pass-input').style.borderColor = c.segDim;
-    document.getElementById('pass-btn').style.color = c.segOn;
-    document.getElementById('pass-btn').style.borderColor = c.segDim;
-    document.getElementById('pass-err').style.color = c.segDim;
-    document.getElementById('pass-err').innerHTML = '';
-    document.getElementById('pass-input').value = '';
-    document.getElementById('pass-input').focus();
-  }
 
-  function submitPass() {
-    var val = document.getElementById('pass-input').value;
-    if (!val) return;
-    localStorage.setItem('dash-secret', val);
-    document.getElementById('pass-overlay').style.display = 'none';
-    
-  }
+/* TEMAS */
 
-  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function setTheme(tema) {
 
-  // ── INIT ──────────────────────────────────────────────────
-  var savedTheme = localStorage.getItem('casio-theme')||'green';
-  applyTheme(savedTheme);
+    var watch =
+        document.getElementById("watch");
 
-  updateClock();
-  setInterval(updateClock,1000);
-  fetchWeather();
-  setInterval(fetchWeather,10*60*1000);
-  // fetchAgenda();
-  document.addEventListener('touchstart',function(){},false);
+    if (tema === "green") {
+
+        watch.style.background = "#141f0c";
+        watch.style.color = "#b8d870";
+        watch.style.borderColor = "#4a6228";
+
+        document.body.style.background = "#0a0a08";
+    }
+
+    if (tema === "blue") {
+
+        watch.style.background = "#07131c";
+        watch.style.color = "#70b8d8";
+        watch.style.borderColor = "#315d70";
+
+        document.body.style.background = "#030a0e";
+    }
+
+    if (tema === "white") {
+
+        watch.style.background = "#eeeeea";
+        watch.style.color = "#111111";
+        watch.style.borderColor = "#333333";
+
+        document.body.style.background = "#ddddda";
+    }
+}
+
+
+/* INICIO */
+
+actualizarReloj();
+
+setInterval(
+    actualizarReloj,
+    1000
+);
+
+cargarClima();
+
+setInterval(
+    cargarClima,
+    600000
+);
+
 </script>
+
 </body>
 </html>
