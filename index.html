@@ -376,48 +376,7 @@
     xhr.send();
   }
 
-  // ── AGENDA ────────────────────────────────────────────────
-  var todayISO='';
-  function fetchAgenda(){
-    var xhr=new XMLHttpRequest();
-    var dashSecret = localStorage.getItem('dash-secret') || '';
-    xhr.open('GET','/api/calendar' + (dashSecret ? '?secret='+encodeURIComponent(dashSecret) : ''), true);
-    xhr.onreadystatechange=function(){
-      if(xhr.readyState!==4) return;
-      var list=document.getElementById('agenda-list');
-      var c=window._colors||THEMES.green;
-      if(xhr.status===200){
-        try{
-          var data=JSON.parse(xhr.responseText);
-          todayISO=data.today||'';
-          if(!data.events||data.events.length===0){
-            list.innerHTML='<div class="msg" style="color:'+c.segDim+'">NO EVENTS_</div>';return;
-          }
-          var html='';
-          for(var i=0;i<data.events.length;i++){
-            var ev=data.events[i];
-            var isToday=ev.date===todayISO;
-            var dateLabel=isToday?'HOY':ev.dayLabel+' '+ev.dateNum;
-            var timeStr=ev.allDay?'ALL DAY':(ev.start+(ev.end?' > '+ev.end:''));
-            var dateColor=isToday?c.segOn:c.segDim;
-            html+='<div class="ev" style="border-color:'+c.segOff+'">'+
-              '<div class="ev-meta">'+
-                '<span class="ev-date" style="color:'+dateColor+'">'+esc(dateLabel)+'</span>'+
-                '<span class="ev-time" style="color:'+c.label+'">'+timeStr+'</span>'+
-                '<span class="ev-cal"  style="color:'+c.label+'">'+esc(ev.calendar.toUpperCase())+'</span>'+
-              '</div>'+
-              '<div class="ev-title" style="color:'+c.segOn+'">'+esc(ev.title.toUpperCase())+'</div>'+
-            '</div>';
-          }
-          list.innerHTML=html;
-        }catch(e){list.innerHTML='<div class="msg" style="color:'+c.segDim+'">ERR_</div>';}
-      } else if(xhr.status===401) {
-        // showPassOverlay();
-      } else {list.innerHTML='<div class="msg" style="color:'+c.segDim+'">NO CONN_</div>';}
-    };
-    xhr.send();
-  }
-
+  
   function showPassOverlay() {
     var overlay = document.getElementById('pass-overlay');
     var c = window._colors || THEMES.green;
@@ -440,8 +399,7 @@
     if (!val) return;
     localStorage.setItem('dash-secret', val);
     document.getElementById('pass-overlay').style.display = 'none';
-    document.getElementById('agenda-list').innerHTML = '<div class="msg">LOADING_</div>';
-    fetchAgenda();
+    
   }
 
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
@@ -455,7 +413,6 @@
   fetchWeather();
   setInterval(fetchWeather,10*60*1000);
   // fetchAgenda();
-  setInterval(fetchAgenda,15*60*1000);
   document.addEventListener('touchstart',function(){},false);
 </script>
 </body>
