@@ -331,10 +331,8 @@
     document.getElementById('clock-real').innerHTML =
       pad(now.getHours())+'<span class="sep-blink">:</span>'+pad(now.getMinutes());
     document.getElementById('clock-ghost').innerHTML = '88<span>:</span>88';
-    document.getElementById('seconds').textContent = pad(now.getSeconds());
     document.getElementById('date-day').textContent = DIAS[now.getDay()];
     document.getElementById('date-full').textContent =
-      pad(now.getDate())+'-'+MESES[now.getMonth()]+'-'+now.getFullYear();
     // Re-aplicar color de fecha
     if (window._colors) {
       document.getElementById('date-day').style.color  = window._colors.segDim;
