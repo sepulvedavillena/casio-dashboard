@@ -191,15 +191,7 @@
     </div>
   </div>
 
-  <!-- Password overlay -->
-  <div id="pass-overlay" style="display:none;position:absolute;inset:0;z-index:100;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;gap:12px;">
-    <div id="pass-label" style="font-family:'Share Tech Mono',monospace;font-size:3vw;letter-spacing:0.1em;">ENTER PASSWORD</div>
-    <input id="pass-input" type="password" autocomplete="off" onkeydown="if(event.keyCode===13)submitPass();" style="background:transparent;border-width:1px;border-style:solid;border-radius:3px;padding:8px 14px;font-family:'Share Tech Mono',monospace;font-size:3.5vw;width:50vw;text-align:center;outline:none;" />
-    <div id="pass-btn" style="font-family:'Share Tech Mono',monospace;font-size:3vw;padding:8px 24px;border-width:1px;border-style:solid;border-radius:3px;cursor:pointer;letter-spacing:0.15em;" onclick="submitPass()">OK</div>
-    <div id="pass-err" style="font-size:2.5vw;opacity:0.6;min-height:1em;"></div>
-  </div>
-</div>
-
+ 
 <script>
   var LAT=-39.8142, LON=-73.2459;
   var DIAS =['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
