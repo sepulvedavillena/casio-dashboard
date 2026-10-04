@@ -423,7 +423,7 @@
           list.innerHTML=html;
         }catch(e){list.innerHTML='<div class="msg" style="color:'+c.segDim+'">ERR_</div>';}
       } else if(xhr.status===401) {
-        showPassOverlay();
+        // showPassOverlay();
       } else {list.innerHTML='<div class="msg" style="color:'+c.segDim+'">NO CONN_</div>';}
     };
     xhr.send();
