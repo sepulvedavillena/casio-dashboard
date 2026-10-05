@@ -10,60 +10,44 @@
 >
 
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta
-  name="apple-mobile-web-app-status-bar-style"
-  content="black"
->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>Casio Valdivia</title>
 
 <style>
 
 /* =========================================================
-   BASE
+   PANTALLA COMPLETA
+   Diseñado para iPad antiguo en horizontal
    ========================================================= */
 
 html,
 body {
-
     margin: 0;
     padding: 0;
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
-
     background: #080b06;
-
-    font-family:
-        "Courier New",
-        Courier,
-        monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 body {
-
     color: #b8d870;
-
     -webkit-user-select: none;
 }
 
 
 /* =========================================================
-   MARCO PRINCIPAL
+   MARCO
    ========================================================= */
 
 #watch {
-
     position: absolute;
-
-    left: 2%;
-    top: 2%;
-
-    width: 96%;
-    height: 96%;
+    left: 1%;
+    top: 1%;
+    width: 98%;
+    height: 98%;
 
     box-sizing: border-box;
 
@@ -77,13 +61,13 @@ body {
 
 /* =========================================================
    CABECERA
+   6% de la pantalla
    ========================================================= */
 
 #header {
-
     position: relative;
 
-    height: 7%;
+    height: 6%;
 
     box-sizing: border-box;
 
@@ -92,38 +76,38 @@ body {
 
 
 #brand {
-
     position: absolute;
 
-    left: 2.2%;
-    top: 31%;
+    left: 2%;
+    top: 24%;
 
-    font-size: 1.15vw;
+    font-size: 1.45vw;
+    font-weight: bold;
 
-    letter-spacing: 0.30em;
+    letter-spacing: 0.20em;
 }
 
 
 #themes {
-
     position: absolute;
 
-    right: 2%;
-    top: 21%;
+    right: 1.5%;
+    top: 13%;
 }
 
 
 .themeButton {
-
     display: inline-block;
 
-    margin-left: 4px;
+    margin-left: 5px;
 
-    padding: 3px 7px;
+    padding: 4px 9px;
 
     border: 1px solid #4a6228;
 
-    font-size: 0.95vw;
+    font-size: 1.20vw;
+
+    font-weight: bold;
 
     cursor: pointer;
 }
@@ -131,13 +115,13 @@ body {
 
 /* =========================================================
    RELOJ
+   43% de la pantalla
    ========================================================= */
 
 #clockArea {
-
     position: relative;
 
-    height: 48%;
+    height: 43%;
 
     box-sizing: border-box;
 
@@ -146,17 +130,16 @@ body {
 
 
 #clock {
-
     position: absolute;
 
     left: 0;
-    top: 7%;
+    top: 1%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 16.5vw;
+    font-size: 17.5vw;
 
     line-height: 0.90;
 
@@ -165,38 +148,37 @@ body {
     letter-spacing: -0.10em;
 
     text-shadow:
-        0 0 12px #93bd39;
+        0 0 14px #93bd39;
 }
 
 
 #date {
-
     position: absolute;
 
     left: 0;
-    bottom: 8%;
+    bottom: 3%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 2.4vw;
+    font-size: 3.4vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.20em;
+    letter-spacing: 0.13em;
 }
 
 
 /* =========================================================
-   INFORMACION
+   ZONA DE INFORMACION
+   40% de la pantalla
    ========================================================= */
 
 #information {
-
     position: relative;
 
-    height: 34%;
+    height: 40%;
 
     box-sizing: border-box;
 
@@ -204,130 +186,138 @@ body {
 }
 
 
-/* ---------------------------------------------------------
-   CLIMA IZQUIERDA
-   --------------------------------------------------------- */
+/* =========================================================
+   CLIMA - IZQUIERDA
+   ========================================================= */
 
 #weather {
-
     position: absolute;
 
     left: 0;
     top: 0;
 
-    width: 48%;
+    width: 50%;
     height: 100%;
 
     box-sizing: border-box;
 
-    padding: 1.6% 2.4%;
+    padding: 1.2% 2%;
 
     border-right: 1px solid #4a6228;
 }
 
 
 .sectionTitle {
+    font-size: 1.55vw;
 
-    font-size: 1.05vw;
+    font-weight: bold;
 
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
 }
 
 
-#temperature {
+/* Temperatura */
 
+#temperature {
     position: absolute;
 
-    left: 5%;
-    top: 24%;
+    left: 4%;
+    top: 23%;
 
-    font-size: 7.5vw;
+    font-size: 9.5vw;
 
-    line-height: 0.85;
+    line-height: 0.80;
 
     font-weight: bold;
 
     text-shadow:
-        0 0 10px #93bd39;
+        0 0 12px #93bd39;
 }
 
 
 #degree {
+    font-size: 2.7vw;
 
-    font-size: 2vw;
+    vertical-align: top;
 }
 
 
-#condition {
+/* Estado del clima */
 
+#condition {
     position: absolute;
 
-    left: 5%;
-    bottom: 11%;
+    left: 4%;
+    bottom: 7%;
 
-    width: 43%;
+    width: 49%;
 
-    font-size: 1.15vw;
+    font-size: 1.65vw;
+
+    line-height: 1.1;
 
     font-weight: bold;
 
-    letter-spacing: 0.10em;
+    letter-spacing: 0.05em;
 }
 
 
-#weatherData {
+/* Sensacion / humedad / viento */
 
+#weatherData {
     position: absolute;
 
     left: 53%;
-    top: 24%;
+    top: 23%;
 
-    width: 44%;
+    width: 45%;
 
-    font-size: 1.18vw;
+    font-size: 1.65vw;
 
-    line-height: 1.8;
-}
+    line-height: 1.75;
 
-
-/* ---------------------------------------------------------
-   RESUMEN DERECHA
-   --------------------------------------------------------- */
-
-#today {
-
-    position: absolute;
-
-    left: 48%;
-    top: 0;
-
-    width: 52%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 1.6% 2.5%;
-}
-
-
-#todayData {
-
-    position: absolute;
-
-    left: 5%;
-    top: 26%;
-
-    width: 90%;
-
-    font-size: 1.30vw;
-
-    line-height: 1.85;
+    letter-spacing: 0.01em;
 }
 
 
 .value {
-
     font-weight: bold;
+    font-size: 1.15em;
+}
+
+
+/* =========================================================
+   PRONOSTICO - DERECHA
+   ========================================================= */
+
+#today {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 1.2% 2%;
+}
+
+
+#todayData {
+    position: absolute;
+
+    left: 5%;
+    top: 23%;
+
+    width: 91%;
+
+    font-size: 1.75vw;
+
+    line-height: 1.75;
+
+    letter-spacing: 0.02em;
 }
 
 
@@ -336,7 +326,6 @@ body {
    ========================================================= */
 
 #messageArea {
-
     position: relative;
 
     height: 11%;
@@ -344,41 +333,35 @@ body {
 
 
 #message {
-
     position: absolute;
 
-    left: 3%;
-    top: 27%;
+    left: 2%;
+    top: 23%;
 
-    width: 94%;
+    width: 96%;
 
     text-align: center;
 
-    font-size: 1.25vw;
+    font-size: 1.75vw;
 
-    letter-spacing: 0.10em;
+    font-weight: bold;
+
+    letter-spacing: 0.055em;
 }
 
 
 #update {
-
     position: absolute;
 
-    right: 2%;
+    right: 1.5%;
+    bottom: 5%;
 
-    bottom: 8%;
+    font-size: 0.85vw;
 
-    font-size: 0.70vw;
-
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
 
     opacity: 0.65;
 }
-
-
-/* =========================================================
-   TEMAS
-   ========================================================= */
 
 </style>
 
@@ -387,16 +370,17 @@ body {
 
 <body>
 
-
 <div id="watch">
 
 
-    <!-- CABECERA -->
+    <!-- ===================================================
+         CABECERA
+         =================================================== -->
 
     <div id="header">
 
         <div id="brand">
-            ● CASIO &nbsp;&nbsp; WORLD TIME &nbsp;&nbsp; VALDIVIA
+            ● CASIO &nbsp; WORLD TIME &nbsp; VALDIVIA
         </div>
 
         <div id="themes">
@@ -428,7 +412,9 @@ body {
 
 
 
-    <!-- RELOJ -->
+    <!-- ===================================================
+         RELOJ
+         =================================================== -->
 
     <div id="clockArea">
 
@@ -444,17 +430,21 @@ body {
 
 
 
-    <!-- INFORMACION -->
+    <!-- ===================================================
+         INFORMACION
+         =================================================== -->
 
     <div id="information">
 
 
-        <!-- CLIMA -->
+        <!-- ===============================================
+             CLIMA
+             =============================================== -->
 
         <div id="weather">
 
             <div class="sectionTitle">
-                ▲ WEATHER / VALDIVIA
+                ▲ CLIMA / VALDIVIA
             </div>
 
 
@@ -472,7 +462,7 @@ body {
 
             <div id="weatherData">
 
-                SENSACIÓN
+                SENS.
                 <span
                     class="value"
                     id="feels"
@@ -483,7 +473,7 @@ body {
 
                 <br>
 
-                HUMEDAD
+                HUM.
                 <span
                     class="value"
                     id="humidity"
@@ -509,18 +499,20 @@ body {
 
 
 
-        <!-- RESUMEN DEL DIA -->
+        <!-- ===============================================
+             PRONOSTICO
+             =============================================== -->
 
         <div id="today">
 
             <div class="sectionTitle">
-                ■ TODAY / FORECAST
+                ■ PRONÓSTICO / HOY
             </div>
 
 
             <div id="todayData">
 
-                MÁXIMA
+                MÁX.
                 <span
                     class="value"
                     id="maxTemp"
@@ -529,9 +521,9 @@ body {
                 </span>
                 °C
 
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
 
-                MÍNIMA
+                MÍN.
                 <span
                     class="value"
                     id="minTemp"
@@ -555,7 +547,7 @@ body {
                 <br>
 
 
-                AMANECE
+                ☀
                 <span
                     class="value"
                     id="sunrise"
@@ -565,7 +557,7 @@ body {
 
                 &nbsp;&nbsp;&nbsp;
 
-                ATARDECE
+                ☾
                 <span
                     class="value"
                     id="sunset"
@@ -581,7 +573,9 @@ body {
 
 
 
-    <!-- MENSAJE -->
+    <!-- ===================================================
+         MENSAJE DEL DIA
+         =================================================== -->
 
     <div id="messageArea">
 
@@ -607,18 +601,11 @@ body {
  CASIO DASHBOARD
  VALDIVIA - CHILE
 
- Diseñado para Safari antiguo / iOS 9.
+ Version optimizada para:
+ iPad antiguo / Safari iOS 9
 
- No usa:
- - fetch()
- - async/await
- - let
- - const
- - arrow functions
- - template literals
- - optional chaining
-
- El clima llega desde /api/weather
+ El clima se obtiene exclusivamente desde:
+ /api/weather
  ============================================================
 */
 
@@ -627,9 +614,7 @@ body {
    FECHA
    ========================================================= */
 
-
 var DIAS = [
-
     "DOM",
     "LUN",
     "MAR",
@@ -637,12 +622,10 @@ var DIAS = [
     "JUE",
     "VIE",
     "SÁB"
-
 ];
 
 
 var MESES = [
-
     "ENE",
     "FEB",
     "MAR",
@@ -655,15 +638,12 @@ var MESES = [
     "OCT",
     "NOV",
     "DIC"
-
 ];
-
 
 
 function pad(numero) {
 
     if (numero < 10) {
-
         return "0" + numero;
     }
 
@@ -676,10 +656,10 @@ function pad(numero) {
    RELOJ
    ========================================================= */
 
-
 function actualizarReloj() {
 
-    var ahora = new Date();
+    var ahora =
+        new Date();
 
 
     var hora =
@@ -688,14 +668,10 @@ function actualizarReloj() {
         pad(ahora.getMinutes());
 
 
-    var reloj =
-        document.getElementById("clock");
-
-
-    if (reloj) {
-
-        reloj.innerHTML = hora;
-    }
+    ponerTexto(
+        "clock",
+        hora
+    );
 
 
     var fecha =
@@ -708,23 +684,17 @@ function actualizarReloj() {
         ahora.getFullYear();
 
 
-    var fechaElemento =
-        document.getElementById("date");
-
-
-    if (fechaElemento) {
-
-        fechaElemento.innerHTML =
-            fecha;
-    }
+    ponerTexto(
+        "date",
+        fecha
+    );
 }
 
 
 
 /* =========================================================
-   MENSAJE DIARIO
+   MENSAJES DIARIOS
    ========================================================= */
-
 
 var MENSAJES = [
 
@@ -751,23 +721,17 @@ function actualizarMensaje() {
         new Date();
 
 
-    var mensaje =
-        document.getElementById("message");
-
-
-    if (mensaje) {
-
-        mensaje.innerHTML =
-            MENSAJES[ahora.getDay()];
-    }
+    ponerTexto(
+        "message",
+        MENSAJES[ahora.getDay()]
+    );
 }
 
 
 
 /* =========================================================
-   CODIGO METEOROLOGICO WMO
+   DESCRIPCION DEL CLIMA
    ========================================================= */
-
 
 function descripcionClima(codigo) {
 
@@ -776,25 +740,21 @@ function descripcionClima(codigo) {
 
 
     if (codigo === 0) {
-
         return "DESPEJADO";
     }
 
 
     if (codigo === 1) {
-
         return "MAYORMENTE DESPEJADO";
     }
 
 
     if (codigo === 2) {
-
         return "PARCIALMENTE NUBLADO";
     }
 
 
     if (codigo === 3) {
-
         return "NUBLADO";
     }
 
@@ -803,7 +763,6 @@ function descripcionClima(codigo) {
         codigo === 45 ||
         codigo === 48
     ) {
-
         return "NIEBLA";
     }
 
@@ -812,7 +771,6 @@ function descripcionClima(codigo) {
         codigo >= 51 &&
         codigo <= 57
     ) {
-
         return "LLOVIZNA";
     }
 
@@ -821,7 +779,6 @@ function descripcionClima(codigo) {
         codigo >= 61 &&
         codigo <= 67
     ) {
-
         return "LLUVIA";
     }
 
@@ -830,7 +787,6 @@ function descripcionClima(codigo) {
         codigo >= 71 &&
         codigo <= 77
     ) {
-
         return "NIEVE";
     }
 
@@ -839,7 +795,6 @@ function descripcionClima(codigo) {
         codigo >= 80 &&
         codigo <= 82
     ) {
-
         return "CHUBASCOS";
     }
 
@@ -848,15 +803,11 @@ function descripcionClima(codigo) {
         codigo === 85 ||
         codigo === 86
     ) {
-
         return "CHUBASCOS DE NIEVE";
     }
 
 
-    if (
-        codigo >= 95
-    ) {
-
+    if (codigo >= 95) {
         return "TORMENTA";
     }
 
@@ -867,22 +818,14 @@ function descripcionClima(codigo) {
 
 
 /* =========================================================
-   FORMATEAR HORA SOLAR
+   HORA DE AMANECER / ATARDECER
    ========================================================= */
-
 
 function horaSolar(valor) {
 
     if (!valor) {
-
         return "--:--";
     }
-
-
-    /*
-     Ejemplo recibido:
-     2026-10-04T07:20
-    */
 
 
     var posicion =
@@ -890,7 +833,6 @@ function horaSolar(valor) {
 
 
     if (posicion < 0) {
-
         return "--:--";
     }
 
@@ -907,23 +849,16 @@ function horaSolar(valor) {
    CLIMA
    ========================================================= */
 
-
 function cargarClima() {
 
     var xhr =
         new XMLHttpRequest();
 
 
-    /*
-     Mismo dominio que la página.
-
-     El iPad NO se conecta directamente
-     a Open-Meteo.
-    */
-
     xhr.open(
         "GET",
-        "/api/weather?t=" + new Date().getTime(),
+        "/api/weather?t=" +
+        new Date().getTime(),
         true
     );
 
@@ -933,7 +868,6 @@ function cargarClima() {
 
 
             if (xhr.readyState !== 4) {
-
                 return;
             }
 
@@ -967,30 +901,48 @@ function cargarClima() {
                 }
 
 
+                /* TEMPERATURA */
+
                 ponerTexto(
                     "temperature",
-                    redondear(datos.temperature) +
+                    redondear(
+                        datos.temperature
+                    ) +
                     '<span id="degree">°C</span>'
                 );
 
 
+                /* SENSACION */
+
                 ponerTexto(
                     "feels",
-                    redondear(datos.feels)
+                    redondear(
+                        datos.feels
+                    )
                 );
 
+
+                /* HUMEDAD */
 
                 ponerTexto(
                     "humidity",
-                    redondear(datos.humidity)
+                    redondear(
+                        datos.humidity
+                    )
                 );
 
+
+                /* VIENTO */
 
                 ponerTexto(
                     "wind",
-                    redondear(datos.wind)
+                    redondear(
+                        datos.wind
+                    )
                 );
 
+
+                /* ESTADO */
 
                 ponerTexto(
                     "condition",
@@ -1000,39 +952,57 @@ function cargarClima() {
                 );
 
 
+                /* MAXIMA */
+
                 ponerTexto(
                     "maxTemp",
-                    redondear(datos.max)
+                    redondear(
+                        datos.max
+                    )
                 );
 
+
+                /* MINIMA */
 
                 ponerTexto(
                     "minTemp",
-                    redondear(datos.min)
+                    redondear(
+                        datos.min
+                    )
                 );
 
+
+                /* LLUVIA */
 
                 ponerTexto(
                     "rain",
-                    redondear(datos.rain)
+                    redondear(
+                        datos.rain
+                    )
                 );
 
+
+                /* AMANECER */
 
                 ponerTexto(
                     "sunrise",
-                    horaSolar(datos.sunrise)
+                    horaSolar(
+                        datos.sunrise
+                    )
                 );
 
+
+                /* ATARDECER */
 
                 ponerTexto(
                     "sunset",
-                    horaSolar(datos.sunset)
+                    horaSolar(
+                        datos.sunset
+                    )
                 );
 
 
-                /*
-                 Indicador de actualización
-                */
+                /* HORA DE ACTUALIZACION */
 
                 var ahora =
                     new Date();
@@ -1041,9 +1011,13 @@ function cargarClima() {
                 ponerTexto(
                     "update",
                     "ACTUALIZADO " +
-                    pad(ahora.getHours()) +
+                    pad(
+                        ahora.getHours()
+                    ) +
                     ":" +
-                    pad(ahora.getMinutes())
+                    pad(
+                        ahora.getMinutes()
+                    )
                 );
 
 
@@ -1063,9 +1037,11 @@ function cargarClima() {
     xhr.onerror =
         function() {
 
+
             mostrarErrorClima(
                 "SIN CONEXIÓN"
             );
+
         };
 
 
@@ -1078,14 +1054,12 @@ function cargarClima() {
    FUNCIONES AUXILIARES
    ========================================================= */
 
-
 function redondear(valor) {
 
     if (
         valor === null ||
         typeof valor === "undefined"
     ) {
-
         return "--";
     }
 
@@ -1095,7 +1069,6 @@ function redondear(valor) {
 
 
     if (isNaN(numero)) {
-
         return "--";
     }
 
@@ -1140,7 +1113,6 @@ function mostrarErrorClima(texto) {
    TEMAS
    ========================================================= */
 
-
 function aplicarBordes(color) {
 
     var watch =
@@ -1160,37 +1132,27 @@ function aplicarBordes(color) {
 
 
     if (watch) {
-
-        watch.style.borderColor =
-            color;
+        watch.style.borderColor = color;
     }
 
 
     if (header) {
-
-        header.style.borderBottomColor =
-            color;
+        header.style.borderBottomColor = color;
     }
 
 
     if (clockArea) {
-
-        clockArea.style.borderBottomColor =
-            color;
+        clockArea.style.borderBottomColor = color;
     }
 
 
     if (information) {
-
-        information.style.borderBottomColor =
-            color;
+        information.style.borderBottomColor = color;
     }
 
 
     if (weather) {
-
-        weather.style.borderRightColor =
-            color;
+        weather.style.borderRightColor = color;
     }
 
 
@@ -1229,10 +1191,11 @@ function setTheme(tema) {
 
 
     if (!watch) {
-
         return;
     }
 
+
+    /* VERDE */
 
     if (tema === "green") {
 
@@ -1257,18 +1220,19 @@ function setTheme(tema) {
         if (clock) {
 
             clock.style.textShadow =
-                "0 0 12px #93bd39";
+                "0 0 14px #93bd39";
         }
 
 
         if (temperature) {
 
             temperature.style.textShadow =
-                "0 0 10px #93bd39";
+                "0 0 12px #93bd39";
         }
     }
 
 
+    /* AZUL */
 
     if (tema === "blue") {
 
@@ -1293,18 +1257,19 @@ function setTheme(tema) {
         if (clock) {
 
             clock.style.textShadow =
-                "0 0 12px #429bc4";
+                "0 0 14px #429bc4";
         }
 
 
         if (temperature) {
 
             temperature.style.textShadow =
-                "0 0 10px #429bc4";
+                "0 0 12px #429bc4";
         }
     }
 
 
+    /* BLANCO Y NEGRO */
 
     if (tema === "white") {
 
@@ -1341,12 +1306,6 @@ function setTheme(tema) {
     }
 
 
-    /*
-     Safari iOS 9 soporta localStorage.
-     Si fallara por alguna razón,
-     simplemente ignoramos el error.
-    */
-
     try {
 
         localStorage.setItem(
@@ -1366,7 +1325,6 @@ function setTheme(tema) {
    RECUPERAR TEMA
    ========================================================= */
 
-
 function cargarTema() {
 
     var tema =
@@ -1382,9 +1340,7 @@ function cargarTema() {
 
 
         if (guardado) {
-
-            tema =
-                guardado;
+            tema = guardado;
         }
 
     }
@@ -1393,7 +1349,9 @@ function cargarTema() {
     }
 
 
-    setTheme(tema);
+    setTheme(
+        tema
+    );
 }
 
 
@@ -1402,13 +1360,11 @@ function cargarTema() {
    INICIO
    ========================================================= */
 
-
 function iniciar() {
 
 
     /*
-     Primero el reloj.
-     Debe funcionar incluso sin Internet.
+     Todo lo local aparece inmediatamente.
     */
 
     actualizarReloj();
@@ -1419,15 +1375,14 @@ function iniciar() {
 
 
     /*
-     Después consultamos el clima.
+     Después solicitamos el clima.
     */
 
     cargarClima();
 
 
     /*
-     Reloj:
-     actualización cada segundo.
+     Hora
     */
 
     setInterval(
@@ -1437,8 +1392,7 @@ function iniciar() {
 
 
     /*
-     Mensaje:
-     comprobación cada minuto.
+     Mensaje diario
     */
 
     setInterval(
@@ -1448,8 +1402,7 @@ function iniciar() {
 
 
     /*
-     Clima:
-     actualización cada 10 minutos.
+     Clima cada 10 minutos
     */
 
     setInterval(
@@ -1460,18 +1413,10 @@ function iniciar() {
 }
 
 
-
-/*
- Safari antiguo puede ejecutar este
- script al final del BODY directamente.
-*/
-
 iniciar();
 
 
 </script>
 
-
 </body>
-
 </html>
