@@ -17,9 +17,9 @@
 <style>
 
 /* =========================================================
-   CASIO FAMILY DASHBOARD V5.1
+   CASIO FAMILY DASHBOARD V5.2
    MAXIMA LEGIBILIDAD
-   HORA BAJADA
+   HORA MAS BAJA
    iPad horizontal / Safari iOS 9
    ========================================================= */
 
@@ -141,8 +141,8 @@ body {
 
     left: 0;
 
-    /* V5.1: HORA BAJADA */
-    top: 4%;
+    /* V5.2 - HORA MAS BAJA */
+    top: 9%;
 
     width: 100%;
 
@@ -496,30 +496,21 @@ body {
             <div id="weatherData">
 
                 SENS.
-                <span
-                    class="value"
-                    id="feels"
-                >
+                <span class="value" id="feels">
                     --
                 </span>°
 
                 <br>
 
                 HUM.
-                <span
-                    class="value"
-                    id="humidity"
-                >
+                <span class="value" id="humidity">
                     --
                 </span>%
 
                 <br>
 
                 VIENTO
-                <span
-                    class="value"
-                    id="wind"
-                >
+                <span class="value" id="wind">
                     --
                 </span>
                 KM/H
@@ -542,52 +533,35 @@ body {
             <div id="todayData">
 
                 MÁX.
-                <span
-                    class="value"
-                    id="maxTemp"
-                >
+                <span class="value" id="maxTemp">
                     --
                 </span>°
 
                 &nbsp;
 
                 MÍN.
-                <span
-                    class="value"
-                    id="minTemp"
-                >
+                <span class="value" id="minTemp">
                     --
                 </span>°
 
                 <br>
 
-
                 LLUVIA
-                <span
-                    class="value"
-                    id="rain"
-                >
+                <span class="value" id="rain">
                     --
                 </span>%
 
                 <br>
 
-
                 ☀
-                <span
-                    class="value"
-                    id="sunrise"
-                >
+                <span class="value" id="sunrise">
                     --:--
                 </span>
 
                 &nbsp;&nbsp;
 
                 ☾
-                <span
-                    class="value"
-                    id="sunset"
-                >
+                <span class="value" id="sunset">
                     --:--
                 </span>
 
@@ -629,15 +603,11 @@ body {
 
 /*
  ============================================================
- CASIO FAMILY DASHBOARD V5.1
+ CASIO FAMILY DASHBOARD V5.2
  MAXIMA LEGIBILIDAD
- HORA BAJADA
+ HORA MAS BAJA
  VALDIVIA - CHILE
-
- Compatible con Safari iOS 9.
-
- Clima:
- /api/weather
+ Compatible con Safari iOS 9
  ============================================================
 */
 
@@ -676,7 +646,6 @@ var MESES = [
 function pad(numero) {
 
     if (numero < 10) {
-
         return "0" + numero;
     }
 
@@ -801,10 +770,8 @@ function actualizarMensaje() {
     var ahora =
         new Date();
 
-
     var hora =
         ahora.getHours();
-
 
     var lista;
 
@@ -817,8 +784,7 @@ function actualizarMensaje() {
         lista =
             MENSAJES_MANANA;
 
-    }
-    else if (
+    } else if (
         hora >= 12 &&
         hora < 20
     ) {
@@ -826,8 +792,7 @@ function actualizarMensaje() {
         lista =
             MENSAJES_TARDE;
 
-    }
-    else {
+    } else {
 
         lista =
             MENSAJES_NOCHE;
@@ -871,21 +836,17 @@ function descripcionClima(codigo) {
         return "DESPEJADO";
     }
 
-
     if (codigo === 1) {
         return "MAYOR. DESPEJADO";
     }
-
 
     if (codigo === 2) {
         return "PARC. NUBLADO";
     }
 
-
     if (codigo === 3) {
         return "NUBLADO";
     }
-
 
     if (
         codigo === 45 ||
@@ -894,14 +855,12 @@ function descripcionClima(codigo) {
         return "NIEBLA";
     }
 
-
     if (
         codigo >= 51 &&
         codigo <= 57
     ) {
         return "LLOVIZNA";
     }
-
 
     if (
         codigo >= 61 &&
@@ -910,14 +869,12 @@ function descripcionClima(codigo) {
         return "LLUVIA";
     }
 
-
     if (
         codigo >= 71 &&
         codigo <= 77
     ) {
         return "NIEVE";
     }
-
 
     if (
         codigo >= 80 &&
@@ -926,14 +883,12 @@ function descripcionClima(codigo) {
         return "CHUBASCOS";
     }
 
-
     if (
         codigo === 85 ||
         codigo === 86
     ) {
         return "NIEVE";
     }
-
 
     if (codigo >= 95) {
         return "TORMENTA";
@@ -952,7 +907,6 @@ function descripcionClima(codigo) {
 function horaSolar(valor) {
 
     if (!valor) {
-
         return "--:--";
     }
 
@@ -962,7 +916,6 @@ function horaSolar(valor) {
 
 
     if (posicion < 0) {
-
         return "--:--";
     }
 
@@ -998,7 +951,6 @@ function cargarClima() {
 
 
             if (xhr.readyState !== 4) {
-
                 return;
             }
 
@@ -1130,8 +1082,7 @@ function cargarClima() {
                 );
 
 
-            }
-            catch (error) {
+            } catch (error) {
 
 
                 mostrarErrorClima(
@@ -1145,7 +1096,6 @@ function cargarClima() {
 
     xhr.onerror =
         function() {
-
 
             mostrarErrorClima(
                 "SIN CONEXIÓN"
@@ -1179,7 +1129,6 @@ function redondear(valor) {
 
 
     if (isNaN(numero)) {
-
         return "--";
     }
 
@@ -1246,21 +1195,17 @@ function aplicarBordes(color) {
         watch.style.borderColor = color;
     }
 
-
     if (header) {
         header.style.borderBottomColor = color;
     }
-
 
     if (clockArea) {
         clockArea.style.borderBottomColor = color;
     }
 
-
     if (information) {
         information.style.borderBottomColor = color;
     }
-
 
     if (weather) {
         weather.style.borderRightColor = color;
@@ -1306,37 +1251,30 @@ function setTheme(tema) {
 
 
     if (!watch) {
-
         return;
     }
 
 
     if (tema === "green") {
 
-
         document.body.style.background =
             "#080b06";
-
 
         watch.style.background =
             "#11180c";
 
-
         watch.style.color =
             "#b8d870";
-
 
         aplicarBordes(
             "#4a6228"
         );
-
 
         if (clock) {
 
             clock.style.textShadow =
                 "0 0 14px #93bd39";
         }
-
 
         if (temperature) {
 
@@ -1348,30 +1286,24 @@ function setTheme(tema) {
 
     if (tema === "blue") {
 
-
         document.body.style.background =
             "#03080c";
-
 
         watch.style.background =
             "#07131c";
 
-
         watch.style.color =
             "#70b8d8";
-
 
         aplicarBordes(
             "#315d70"
         );
-
 
         if (clock) {
 
             clock.style.textShadow =
                 "0 0 14px #429bc4";
         }
-
 
         if (temperature) {
 
@@ -1383,35 +1315,25 @@ function setTheme(tema) {
 
     if (tema === "white") {
 
-
         document.body.style.background =
             "#d5d5d0";
-
 
         watch.style.background =
             "#eeeeea";
 
-
         watch.style.color =
             "#111111";
-
 
         aplicarBordes(
             "#333333"
         );
 
-
         if (clock) {
-
-            clock.style.textShadow =
-                "none";
+            clock.style.textShadow = "none";
         }
 
-
         if (temperature) {
-
-            temperature.style.textShadow =
-                "none";
+            temperature.style.textShadow = "none";
         }
     }
 
@@ -1423,8 +1345,7 @@ function setTheme(tema) {
             tema
         );
 
-    }
-    catch (e) {
+    } catch (e) {
 
     }
 }
@@ -1450,13 +1371,10 @@ function cargarTema() {
 
 
         if (guardado) {
-
-            tema =
-                guardado;
+            tema = guardado;
         }
 
-    }
-    catch (e) {
+    } catch (e) {
 
     }
 
@@ -1550,7 +1468,6 @@ function activarModoNoche() {
         watch.style.background =
             "#060906";
 
-
         watch.style.color =
             "#627640";
     }
@@ -1583,7 +1500,6 @@ function activarModoNoche() {
 
 function iniciar() {
 
-
     actualizarReloj();
 
     actualizarMensaje();
@@ -1603,7 +1519,7 @@ function iniciar() {
     );
 
 
-    /* MENSAJE + MODO NOCTURNO */
+    /* MENSAJES + MODO NOCTURNO */
 
     setInterval(
         function() {
@@ -1617,18 +1533,16 @@ function iniciar() {
     );
 
 
-    /* CLIMA */
+    /* CLIMA CADA 10 MINUTOS */
 
     setInterval(
         cargarClima,
         600000
     );
-
 }
 
 
 iniciar();
-
 
 </script>
 
