@@ -17,16 +17,19 @@
 <style>
 
 /* =========================================================
-   CASIO FAMILY DASHBOARD V3
+   CASIO FAMILY DASHBOARD V4
    iPad horizontal / Safari iOS 9
+   Tipografía ampliada
    ========================================================= */
 
 html,
 body {
     margin: 0;
     padding: 0;
+
     width: 100%;
     height: 100%;
+
     overflow: hidden;
 
     background: #080b06;
@@ -50,11 +53,11 @@ body {
 #watch {
     position: absolute;
 
-    left: 1%;
-    top: 1%;
+    left: 0.5%;
+    top: 0.5%;
 
-    width: 98%;
-    height: 98%;
+    width: 99%;
+    height: 99%;
 
     box-sizing: border-box;
 
@@ -84,34 +87,36 @@ body {
 #brand {
     position: absolute;
 
-    left: 2%;
-    top: 24%;
+    left: 1.7%;
+    top: 20%;
 
-    font-size: 1.45vw;
+    font-size: 1.65vw;
+
     font-weight: bold;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.13em;
 }
 
 
 #themes {
     position: absolute;
 
-    right: 1.5%;
-    top: 13%;
+    right: 1.2%;
+    top: 10%;
 }
 
 
 .themeButton {
     display: inline-block;
 
-    margin-left: 5px;
+    margin-left: 4px;
 
-    padding: 4px 9px;
+    padding: 4px 8px;
 
     border: 1px solid #4a6228;
 
-    font-size: 1.2vw;
+    font-size: 1.35vw;
+
     font-weight: bold;
 
     cursor: pointer;
@@ -125,7 +130,7 @@ body {
 #clockArea {
     position: relative;
 
-    height: 41%;
+    height: 40%;
 
     box-sizing: border-box;
 
@@ -137,15 +142,15 @@ body {
     position: absolute;
 
     left: 0;
-    top: 0;
+    top: -2%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 17.2vw;
+    font-size: 18vw;
 
-    line-height: 0.9;
+    line-height: 0.88;
 
     font-weight: bold;
 
@@ -160,17 +165,17 @@ body {
     position: absolute;
 
     left: 0;
-    bottom: 2%;
+    bottom: 1%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 3.25vw;
+    font-size: 3.7vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.10em;
 }
 
 
@@ -181,7 +186,7 @@ body {
 #information {
     position: relative;
 
-    height: 36%;
+    height: 37%;
 
     box-sizing: border-box;
 
@@ -204,28 +209,30 @@ body {
 
     box-sizing: border-box;
 
-    padding: 1.1% 2%;
+    padding: 1% 1.6%;
 
     border-right: 1px solid #4a6228;
 }
 
 
 .sectionTitle {
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.13em;
+    letter-spacing: 0.10em;
 }
 
+
+/* TEMPERATURA */
 
 #temperature {
     position: absolute;
 
-    left: 4%;
-    top: 25%;
+    left: 3%;
+    top: 24%;
 
-    font-size: 8.7vw;
+    font-size: 9.8vw;
 
     line-height: 0.8;
 
@@ -237,48 +244,54 @@ body {
 
 
 #degree {
-    font-size: 2.5vw;
+    font-size: 2.8vw;
+
     vertical-align: top;
 }
 
 
+/* ESTADO DEL TIEMPO */
+
 #condition {
     position: absolute;
 
-    left: 4%;
-    bottom: 7%;
+    left: 3%;
+    bottom: 6%;
 
     width: 48%;
 
-    font-size: 1.55vw;
+    font-size: 1.85vw;
 
-    line-height: 1.1;
+    line-height: 1.05;
 
     font-weight: bold;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
 }
 
+
+/* SENSACION / HUMEDAD / VIENTO */
 
 #weatherData {
     position: absolute;
 
-    left: 53%;
-    top: 25%;
+    left: 52%;
+    top: 23%;
 
-    width: 45%;
+    width: 47%;
 
-    font-size: 1.55vw;
+    font-size: 1.9vw;
 
-    line-height: 1.7;
+    line-height: 1.62;
 
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
 }
 
 
 .value {
     font-weight: bold;
-    font-size: 1.18em;
+
+    font-size: 1.20em;
 }
 
 
@@ -297,23 +310,23 @@ body {
 
     box-sizing: border-box;
 
-    padding: 1.1% 2%;
+    padding: 1% 1.7%;
 }
 
 
 #todayData {
     position: absolute;
 
-    left: 5%;
-    top: 25%;
+    left: 4%;
+    top: 23%;
 
-    width: 91%;
+    width: 94%;
 
-    font-size: 1.65vw;
+    font-size: 2vw;
 
-    line-height: 1.72;
+    line-height: 1.60;
 
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
 }
 
 
@@ -333,14 +346,14 @@ body {
 #messageTitle {
     position: absolute;
 
-    left: 2%;
-    top: 10%;
+    left: 1.5%;
+    top: 7%;
 
-    font-size: 1.05vw;
+    font-size: 1.25vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.12em;
 
     opacity: 0.75;
 }
@@ -349,43 +362,35 @@ body {
 #message {
     position: absolute;
 
-    left: 3%;
-    top: 32%;
+    left: 2%;
+    top: 29%;
 
-    width: 94%;
+    width: 96%;
 
     text-align: center;
 
-    font-size: 1.55vw;
+    font-size: 1.85vw;
 
-    line-height: 1.28;
+    line-height: 1.20;
 
     font-weight: bold;
 
-    letter-spacing: 0.035em;
+    letter-spacing: 0.015em;
 }
 
 
 #update {
     position: absolute;
 
-    right: 1.5%;
-    bottom: 5%;
+    right: 1%;
 
-    font-size: 0.75vw;
+    bottom: 3%;
 
-    letter-spacing: 0.08em;
+    font-size: 0.85vw;
+
+    letter-spacing: 0.06em;
 
     opacity: 0.55;
-}
-
-
-/* =========================================================
-   MODO NOCTURNO
-   ========================================================= */
-
-.nightText {
-    opacity: 0.72;
 }
 
 </style>
@@ -399,7 +404,9 @@ body {
 <div id="watch">
 
 
-    <!-- CABECERA -->
+    <!-- ===================================================
+         CABECERA
+         =================================================== -->
 
     <div id="header">
 
@@ -437,7 +444,9 @@ body {
 
 
 
-    <!-- RELOJ -->
+    <!-- ===================================================
+         RELOJ
+         =================================================== -->
 
     <div id="clockArea">
 
@@ -454,7 +463,9 @@ body {
 
 
 
-    <!-- INFORMACION -->
+    <!-- ===================================================
+         INFORMACION
+         =================================================== -->
 
     <div id="information">
 
@@ -519,7 +530,7 @@ body {
 
 
 
-        <!-- HOY -->
+        <!-- PRONOSTICO -->
 
         <div id="today">
 
@@ -573,7 +584,7 @@ body {
                     --:--
                 </span>
 
-                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
 
                 ☾
                 <span
@@ -591,7 +602,9 @@ body {
 
 
 
-    <!-- MENSAJE -->
+    <!-- ===================================================
+         MENSAJE FAMILIAR
+         =================================================== -->
 
     <div id="messageArea">
 
@@ -621,15 +634,13 @@ body {
 
 /*
  ============================================================
- CASIO FAMILY DASHBOARD V3
+ CASIO FAMILY DASHBOARD V4
  VALDIVIA - CHILE
 
- Compatible con Safari iOS 9.
+ Compatible con Safari / iOS 9.
 
- El iPad consulta:
+ El clima llega desde:
  /api/weather
-
- No se utilizan funciones modernas de JavaScript.
  ============================================================
 */
 
@@ -637,7 +648,6 @@ body {
 /* =========================================================
    FECHA
    ========================================================= */
-
 
 var DIAS = [
     "DOM",
@@ -679,9 +689,8 @@ function pad(numero) {
 
 
 /* =========================================================
-   RELOJ Y FECHA
+   RELOJ
    ========================================================= */
-
 
 function actualizarReloj() {
 
@@ -720,14 +729,9 @@ function actualizarReloj() {
 
 
 /* =========================================================
-   MENSAJES FAMILIARES
-   ========================================================= */
-
-
-/*
    MENSAJES DE MAÑANA
    05:00 - 11:59
-*/
+   ========================================================= */
 
 var MENSAJES_MANANA = [
 
@@ -749,10 +753,11 @@ var MENSAJES_MANANA = [
 ];
 
 
-/*
+
+/* =========================================================
    MENSAJES DE TARDE
    12:00 - 19:59
-*/
+   ========================================================= */
 
 var MENSAJES_TARDE = [
 
@@ -774,10 +779,11 @@ var MENSAJES_TARDE = [
 ];
 
 
-/*
+
+/* =========================================================
    MENSAJES DE NOCHE
    20:00 - 04:59
-*/
+   ========================================================= */
 
 var MENSAJES_NOCHE = [
 
@@ -803,7 +809,6 @@ var MENSAJES_NOCHE = [
 /* =========================================================
    SELECCION DEL MENSAJE
    ========================================================= */
-
 
 function actualizarMensaje() {
 
@@ -844,13 +849,8 @@ function actualizarMensaje() {
 
 
     /*
-       Cambia cada 30 minutos.
-
-       El cálculo depende de la fecha y la hora,
-       por lo que no muestra siempre el mismo
-       mensaje después de recargar la página.
+       Cambio de mensaje cada 30 minutos.
     */
-
 
     var bloque =
         Math.floor(
@@ -878,7 +878,6 @@ function actualizarMensaje() {
 /* =========================================================
    DESCRIPCION DEL CLIMA
    ========================================================= */
-
 
 function descripcionClima(codigo) {
 
@@ -965,9 +964,8 @@ function descripcionClima(codigo) {
 
 
 /* =========================================================
-   HORA SOLAR
+   AMANECER / ATARDECER
    ========================================================= */
-
 
 function horaSolar(valor) {
 
@@ -999,12 +997,16 @@ function horaSolar(valor) {
    CLIMA
    ========================================================= */
 
-
 function cargarClima() {
 
     var xhr =
         new XMLHttpRequest();
 
+
+    /*
+       El iPad solamente consulta Vercel.
+       Vercel consulta Open-Meteo.
+    */
 
     xhr.open(
         "GET",
@@ -1053,6 +1055,8 @@ function cargarClima() {
                 }
 
 
+                /* TEMPERATURA */
+
                 ponerTexto(
                     "temperature",
                     redondear(
@@ -1062,6 +1066,8 @@ function cargarClima() {
                 );
 
 
+                /* SENSACION */
+
                 ponerTexto(
                     "feels",
                     redondear(
@@ -1069,6 +1075,8 @@ function cargarClima() {
                     )
                 );
 
+
+                /* HUMEDAD */
 
                 ponerTexto(
                     "humidity",
@@ -1078,6 +1086,8 @@ function cargarClima() {
                 );
 
 
+                /* VIENTO */
+
                 ponerTexto(
                     "wind",
                     redondear(
@@ -1085,6 +1095,8 @@ function cargarClima() {
                     )
                 );
 
+
+                /* ESTADO */
 
                 ponerTexto(
                     "condition",
@@ -1094,6 +1106,8 @@ function cargarClima() {
                 );
 
 
+                /* MAXIMA */
+
                 ponerTexto(
                     "maxTemp",
                     redondear(
@@ -1101,6 +1115,8 @@ function cargarClima() {
                     )
                 );
 
+
+                /* MINIMA */
 
                 ponerTexto(
                     "minTemp",
@@ -1110,6 +1126,8 @@ function cargarClima() {
                 );
 
 
+                /* LLUVIA */
+
                 ponerTexto(
                     "rain",
                     redondear(
@@ -1117,6 +1135,8 @@ function cargarClima() {
                     )
                 );
 
+
+                /* AMANECER */
 
                 ponerTexto(
                     "sunrise",
@@ -1126,6 +1146,8 @@ function cargarClima() {
                 );
 
 
+                /* ATARDECER */
+
                 ponerTexto(
                     "sunset",
                     horaSolar(
@@ -1133,6 +1155,8 @@ function cargarClima() {
                     )
                 );
 
+
+                /* ULTIMA ACTUALIZACION */
 
                 var ahora =
                     new Date();
@@ -1181,9 +1205,8 @@ function cargarClima() {
 
 
 /* =========================================================
-   AUXILIARES
+   FUNCIONES AUXILIARES
    ========================================================= */
-
 
 function redondear(valor) {
 
@@ -1243,9 +1266,8 @@ function mostrarErrorClima(texto) {
 
 
 /* =========================================================
-   BORDES DE LOS TEMAS
+   BORDES
    ========================================================= */
-
 
 function aplicarBordes(color) {
 
@@ -1266,27 +1288,37 @@ function aplicarBordes(color) {
 
 
     if (watch) {
-        watch.style.borderColor = color;
+
+        watch.style.borderColor =
+            color;
     }
 
 
     if (header) {
-        header.style.borderBottomColor = color;
+
+        header.style.borderBottomColor =
+            color;
     }
 
 
     if (clockArea) {
-        clockArea.style.borderBottomColor = color;
+
+        clockArea.style.borderBottomColor =
+            color;
     }
 
 
     if (information) {
-        information.style.borderBottomColor = color;
+
+        information.style.borderBottomColor =
+            color;
     }
 
 
     if (weather) {
-        weather.style.borderRightColor = color;
+
+        weather.style.borderRightColor =
+            color;
     }
 
 
@@ -1316,7 +1348,6 @@ function aplicarBordes(color) {
    TEMAS
    ========================================================= */
 
-
 function setTheme(tema) {
 
     var watch =
@@ -1334,6 +1365,9 @@ function setTheme(tema) {
         return;
     }
 
+
+
+    /* VERDE */
 
     if (tema === "green") {
 
@@ -1371,6 +1405,8 @@ function setTheme(tema) {
 
 
 
+    /* AZUL */
+
     if (tema === "blue") {
 
 
@@ -1406,6 +1442,8 @@ function setTheme(tema) {
     }
 
 
+
+    /* BLANCO Y NEGRO */
 
     if (tema === "white") {
 
@@ -1461,7 +1499,6 @@ function setTheme(tema) {
    RECUPERAR TEMA
    ========================================================= */
 
-
 function cargarTema() {
 
     var tema =
@@ -1496,9 +1533,9 @@ function cargarTema() {
 
 
 /* =========================================================
-   MODO NOCTURNO AUTOMATICO
+   MODO NOCTURNO
+   22:30 - 07:00
    ========================================================= */
-
 
 var modoNocheActivo =
     false;
@@ -1522,11 +1559,6 @@ function comprobarModoNocturno() {
         hora * 60 +
         minutos;
 
-
-    /*
-       Noche:
-       22:30 -> 07:00
-    */
 
     var inicioNoche =
         22 * 60 + 30;
@@ -1590,6 +1622,7 @@ function activarModoNoche() {
         watch.style.background =
             "#060906";
 
+
         watch.style.color =
             "#627640";
     }
@@ -1620,9 +1653,12 @@ function activarModoNoche() {
    INICIO
    ========================================================= */
 
-
 function iniciar() {
 
+
+    /*
+       FUNCIONES LOCALES
+    */
 
     actualizarReloj();
 
@@ -1632,11 +1668,17 @@ function iniciar() {
 
     comprobarModoNocturno();
 
+
+    /*
+       CLIMA
+    */
+
     cargarClima();
 
 
     /*
-       Reloj
+       RELOJ
+       Cada segundo
     */
 
     setInterval(
@@ -1646,8 +1688,8 @@ function iniciar() {
 
 
     /*
-       Mensajes y modo nocturno.
-       Se revisan cada minuto.
+       MENSAJE + MODO NOCTURNO
+       Cada minuto
     */
 
     setInterval(
@@ -1663,7 +1705,8 @@ function iniciar() {
 
 
     /*
-       Clima cada 10 minutos.
+       CLIMA
+       Cada 10 minutos
     */
 
     setInterval(
