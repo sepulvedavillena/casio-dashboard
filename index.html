@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <meta charset="utf-8">
 
 <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 >
 
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<title>Casio Familiar - Valdivia</title>
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black"
+>
+
+<title>
+CASIO FAMILY TIME
+</title>
+
 
 <style>
 
 /* =========================================================
-   CASIO FAMILY DASHBOARD V5.2
-   MAXIMA LEGIBILIDAD
-   HORA MAS BAJA
-   iPad horizontal / Safari iOS 9
+   CASIO FAMILY TIME V6
+   VALDIVIA
+   SEPULVEDA ALCAINO
+
+   Compatible Safari / iOS 9
    ========================================================= */
+
 
 html,
 body {
+
     margin: 0;
+
     padding: 0;
+
     width: 100%;
+
     height: 100%;
+
     overflow: hidden;
+
     background: #080b06;
 
     font-family:
@@ -38,8 +54,11 @@ body {
         monospace;
 }
 
+
 body {
+
     color: #b8d870;
+
     -webkit-user-select: none;
 }
 
@@ -48,13 +67,17 @@ body {
    MARCO
    ========================================================= */
 
+
 #watch {
+
     position: absolute;
 
     left: 0.3%;
+
     top: 0.3%;
 
     width: 99.4%;
+
     height: 99.4%;
 
     box-sizing: border-box;
@@ -67,53 +90,63 @@ body {
 }
 
 
+
 /* =========================================================
    CABECERA
    ========================================================= */
 
+
 #header {
+
     position: relative;
 
     height: 6%;
 
     box-sizing: border-box;
 
-    border-bottom: 1px solid #4a6228;
+    border-bottom:
+        1px solid #4a6228;
 }
 
 
 #brand {
+
     position: absolute;
 
-    left: 1.4%;
-    top: 18%;
+    left: 1.2%;
 
-    font-size: 1.85vw;
+    top: 17%;
+
+    font-size: 1.62vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.045em;
 }
 
 
 #themes {
+
     position: absolute;
 
-    right: 1%;
-    top: 8%;
+    right: 0.8%;
+
+    top: 7%;
 }
 
 
 .themeButton {
+
     display: inline-block;
 
     margin-left: 3px;
 
-    padding: 4px 7px;
+    padding: 4px 6px;
 
-    border: 1px solid #4a6228;
+    border:
+        1px solid #4a6228;
 
-    font-size: 1.5vw;
+    font-size: 1.25vw;
 
     font-weight: bold;
 
@@ -121,27 +154,31 @@ body {
 }
 
 
+
 /* =========================================================
    RELOJ
    ========================================================= */
 
+
 #clockArea {
+
     position: relative;
 
     height: 39%;
 
     box-sizing: border-box;
 
-    border-bottom: 1px solid #4a6228;
+    border-bottom:
+        1px solid #4a6228;
 }
 
 
 #clock {
+
     position: absolute;
 
     left: 0;
 
-    /* V5.2 - HORA MAS BAJA */
     top: 9%;
 
     width: 100%;
@@ -162,9 +199,11 @@ body {
 
 
 #date {
+
     position: absolute;
 
     left: 0;
+
     bottom: 0;
 
     width: 100%;
@@ -177,66 +216,78 @@ body {
 
     font-weight: bold;
 
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
 }
 
 
+
 /* =========================================================
-   ZONA DE DATOS
+   INFORMACION
    ========================================================= */
 
+
 #information {
+
     position: relative;
 
-    height: 38%;
+    height: 36%;
 
     box-sizing: border-box;
 
-    border-bottom: 1px solid #4a6228;
+    border-bottom:
+        1px solid #4a6228;
 }
 
 
+
 /* =========================================================
-   CLIMA
+   CLIMA ACTUAL
    ========================================================= */
 
+
 #weather {
+
     position: absolute;
 
     left: 0;
+
     top: 0;
 
     width: 50%;
+
     height: 100%;
 
     box-sizing: border-box;
 
-    padding: 0.8% 1.4%;
+    padding:
+        0.8% 1.4%;
 
-    border-right: 1px solid #4a6228;
+    border-right:
+        1px solid #4a6228;
 }
 
 
 .sectionTitle {
-    font-size: 2.05vw;
+
+    font-size: 2vw;
 
     line-height: 1;
 
     font-weight: bold;
 
-    letter-spacing: 0.055em;
+    letter-spacing: 0.04em;
 }
 
 
-/* TEMPERATURA */
-
 #temperature {
+
     position: absolute;
 
     left: 2.5%;
-    top: 23%;
 
-    font-size: 10.3vw;
+    top: 25%;
+
+    font-size: 9.7vw;
 
     line-height: 0.78;
 
@@ -248,159 +299,256 @@ body {
 
 
 #degree {
-    font-size: 3vw;
+
+    font-size: 2.8vw;
 
     vertical-align: top;
 }
 
 
-/* ESTADO DEL CLIMA */
-
 #condition {
+
     position: absolute;
 
     left: 2.5%;
+
     bottom: 5%;
 
-    width: 49%;
+    width: 48%;
+
+    font-size: 2vw;
+
+    line-height: 1;
+
+    font-weight: bold;
+}
+
+
+#weatherData {
+
+    position: absolute;
+
+    left: 51%;
+
+    top: 25%;
+
+    width: 48%;
 
     font-size: 2.05vw;
+
+    line-height: 1.5;
+
+    font-weight: bold;
+
+    letter-spacing: -0.025em;
+}
+
+
+.value {
+
+    font-weight: bold;
+
+    font-size: 1.16em;
+}
+
+
+
+/* =========================================================
+   PRONOSTICO 3 DIAS
+   ========================================================= */
+
+
+#forecast {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 50%;
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        0.8% 1.4%;
+}
+
+
+#forecastRows {
+
+    position: absolute;
+
+    left: 3%;
+
+    top: 24%;
+
+    width: 95%;
+}
+
+
+.forecastRow {
+
+    position: relative;
+
+    height: 31%;
+
+    white-space: nowrap;
+
+    font-size: 2.4vw;
+
+    line-height: 1.42;
+
+    font-weight: bold;
+
+    letter-spacing: -0.045em;
+}
+
+
+.forecastDay {
+
+    display: inline-block;
+
+    width: 17%;
+
+    font-size: 1.05em;
+}
+
+
+.forecastTemp {
+
+    display: inline-block;
+
+    width: 48%;
+
+    font-size: 1.12em;
+}
+
+
+.forecastRain {
+
+    display: inline-block;
+
+    width: 31%;
+
+    text-align: right;
+
+    font-size: 1.05em;
+}
+
+
+
+/* =========================================================
+   AVISO
+   ========================================================= */
+
+
+#alertArea {
+
+    position: relative;
+
+    height: 6%;
+
+    box-sizing: border-box;
+
+    border-bottom:
+        1px solid #4a6228;
+}
+
+
+#weatherAlert {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 9%;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 2.25vw;
 
     line-height: 1;
 
     font-weight: bold;
 
-    letter-spacing: 0;
+    letter-spacing: 0.07em;
 }
 
-
-/* SENSACION / HUMEDAD / VIENTO */
-
-#weatherData {
-    position: absolute;
-
-    left: 51%;
-    top: 22%;
-
-    width: 48%;
-
-    font-size: 2.2vw;
-
-    line-height: 1.48;
-
-    font-weight: bold;
-
-    letter-spacing: -0.02em;
-}
-
-
-.value {
-    font-weight: bold;
-
-    font-size: 1.18em;
-}
-
-
-/* =========================================================
-   PRONOSTICO
-   ========================================================= */
-
-#today {
-    position: absolute;
-
-    left: 50%;
-    top: 0;
-
-    width: 50%;
-    height: 100%;
-
-    box-sizing: border-box;
-
-    padding: 0.8% 1.4%;
-}
-
-
-#todayData {
-    position: absolute;
-
-    left: 3%;
-    top: 22%;
-
-    width: 96%;
-
-    font-size: 2.25vw;
-
-    line-height: 1.48;
-
-    font-weight: bold;
-
-    letter-spacing: -0.02em;
-}
 
 
 /* =========================================================
    MENSAJE FAMILIAR
    ========================================================= */
 
+
 #messageArea {
+
     position: relative;
 
-    height: 17%;
+    height: 13%;
 
     box-sizing: border-box;
 }
 
 
 #messageTitle {
+
     position: absolute;
 
     left: 1.2%;
+
     top: 5%;
 
-    font-size: 1.45vw;
+    font-size: 1.25vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
 
-    opacity: 0.75;
+    opacity: 0.70;
 }
 
 
 #message {
+
     position: absolute;
 
-    left: 1.5%;
-    top: 28%;
+    left: 1.2%;
 
-    width: 97%;
+    top: 27%;
+
+    width: 97.6%;
 
     text-align: center;
 
-    font-size: 2.05vw;
+    font-size: 1.85vw;
 
-    line-height: 1.15;
+    line-height: 1.12;
 
     font-weight: bold;
-
-    letter-spacing: 0;
 }
 
 
 #update {
+
     position: absolute;
 
-    right: 0.8%;
-    bottom: 2%;
+    right: 0.7%;
 
-    font-size: 1vw;
+    bottom: 1%;
+
+    font-size: 0.85vw;
 
     font-weight: bold;
 
-    letter-spacing: 0.03em;
-
-    opacity: 0.55;
+    opacity: 0.5;
 }
+
 
 </style>
 
@@ -409,188 +557,51 @@ body {
 
 <body>
 
+
 <div id="watch">
 
 
-    <!-- CABECERA -->
-
-    <div id="header">
-
-        <div id="brand">
-            ● CASIO &nbsp; FAMILY TIME &nbsp; VALDIVIA
-        </div>
+<!-- ======================================================
+     CABECERA
+     ====================================================== -->
 
 
-        <div id="themes">
+<div id="header">
 
-            <span
-                class="themeButton"
-                onclick="setTheme('green')"
-            >
-                GRN
-            </span>
 
-            <span
-                class="themeButton"
-                onclick="setTheme('blue')"
-            >
-                BLU
-            </span>
+    <div id="brand">
 
-            <span
-                class="themeButton"
-                onclick="setTheme('white')"
-            >
-                B&amp;W
-            </span>
-
-        </div>
+        CASIO FAMILY TIME · VALDIVIA · SEPULVEDA ALCAINO
 
     </div>
 
 
-
-    <!-- RELOJ -->
-
-    <div id="clockArea">
-
-        <div id="clock">
-            --:--
-        </div>
+    <div id="themes">
 
 
-        <div id="date">
-            CARGANDO
-        </div>
-
-    </div>
-
-
-
-    <!-- DATOS -->
-
-    <div id="information">
+        <span
+            class="themeButton"
+            onclick="setTheme('green')"
+        >
+            GRN
+        </span>
 
 
-        <!-- CLIMA -->
-
-        <div id="weather">
-
-            <div class="sectionTitle">
-                ▲ CLIMA / VALDIVIA
-            </div>
-
-
-            <div id="temperature">
-
-                --<span id="degree">°C</span>
-
-            </div>
+        <span
+            class="themeButton"
+            onclick="setTheme('blue')"
+        >
+            BLU
+        </span>
 
 
-            <div id="condition">
-                CARGANDO...
-            </div>
+        <span
+            class="themeButton"
+            onclick="setTheme('white')"
+        >
+            B&amp;W
+        </span>
 
-
-            <div id="weatherData">
-
-                SENS.
-                <span class="value" id="feels">
-                    --
-                </span>°
-
-                <br>
-
-                HUM.
-                <span class="value" id="humidity">
-                    --
-                </span>%
-
-                <br>
-
-                VIENTO
-                <span class="value" id="wind">
-                    --
-                </span>
-                KM/H
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRONOSTICO -->
-
-        <div id="today">
-
-            <div class="sectionTitle">
-                ■ PRONÓSTICO / HOY
-            </div>
-
-
-            <div id="todayData">
-
-                MÁX.
-                <span class="value" id="maxTemp">
-                    --
-                </span>°
-
-                &nbsp;
-
-                MÍN.
-                <span class="value" id="minTemp">
-                    --
-                </span>°
-
-                <br>
-
-                LLUVIA
-                <span class="value" id="rain">
-                    --
-                </span>%
-
-                <br>
-
-                ☀
-                <span class="value" id="sunrise">
-                    --:--
-                </span>
-
-                &nbsp;&nbsp;
-
-                ☾
-                <span class="value" id="sunset">
-                    --:--
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MENSAJE -->
-
-    <div id="messageArea">
-
-        <div id="messageTitle">
-            ♥ BORJA · MILA · MAITE · CLARA
-        </div>
-
-
-        <div id="message">
-            QUE TENGAN UN HERMOSO DÍA.
-            MAMÁ Y PAPÁ LOS AMAMOS MUCHO.
-        </div>
-
-
-        <div id="update">
-            CLIMA: ESPERANDO
-        </div>
 
     </div>
 
@@ -599,24 +610,289 @@ body {
 
 
 
+<!-- ======================================================
+     RELOJ
+     ====================================================== -->
+
+
+<div id="clockArea">
+
+
+    <div id="clock">
+
+        --:--
+
+    </div>
+
+
+    <div id="date">
+
+        CARGANDO
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     INFORMACION
+     ====================================================== -->
+
+
+<div id="information">
+
+
+    <!-- CLIMA ACTUAL -->
+
+
+    <div id="weather">
+
+
+        <div class="sectionTitle">
+
+            ▲ CLIMA / AHORA
+
+        </div>
+
+
+        <div id="temperature">
+
+            --<span id="degree">°C</span>
+
+        </div>
+
+
+        <div id="condition">
+
+            CARGANDO...
+
+        </div>
+
+
+        <div id="weatherData">
+
+
+            SENS.
+
+            <span
+                class="value"
+                id="feels"
+            >
+                --
+            </span>°
+
+
+            <br>
+
+
+            HUM.
+
+            <span
+                class="value"
+                id="humidity"
+            >
+                --
+            </span>%
+
+
+            <br>
+
+
+            VIENTO
+
+            <span
+                class="value"
+                id="wind"
+            >
+                --
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- PRONOSTICO -->
+
+
+    <div id="forecast">
+
+
+        <div class="sectionTitle">
+
+            ■ PRÓXIMOS 3 DÍAS
+
+        </div>
+
+
+        <div id="forecastRows">
+
+
+            <div class="forecastRow">
+
+                <span
+                    class="forecastDay"
+                    id="day1"
+                >
+                    ---
+                </span>
+
+                <span
+                    class="forecastTemp"
+                    id="temp1"
+                >
+                    --° / --°
+                </span>
+
+                <span
+                    class="forecastRain"
+                    id="rain1"
+                >
+                    ☂ --%
+                </span>
+
+            </div>
+
+
+            <div class="forecastRow">
+
+                <span
+                    class="forecastDay"
+                    id="day2"
+                >
+                    ---
+                </span>
+
+                <span
+                    class="forecastTemp"
+                    id="temp2"
+                >
+                    --° / --°
+                </span>
+
+                <span
+                    class="forecastRain"
+                    id="rain2"
+                >
+                    ☂ --%
+                </span>
+
+            </div>
+
+
+            <div class="forecastRow">
+
+                <span
+                    class="forecastDay"
+                    id="day3"
+                >
+                    ---
+                </span>
+
+                <span
+                    class="forecastTemp"
+                    id="temp3"
+                >
+                    --° / --°
+                </span>
+
+                <span
+                    class="forecastRain"
+                    id="rain3"
+                >
+                    ☂ --%
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     AVISO METEOROLOGICO
+     ====================================================== -->
+
+
+<div id="alertArea">
+
+
+    <div id="weatherAlert">
+
+        CLIMA ACTUALIZANDO...
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ======================================================
+     MENSAJE FAMILIAR
+     ====================================================== -->
+
+
+<div id="messageArea">
+
+
+    <div id="messageTitle">
+
+        ♥ BORJA · MILA · MAITE · CLARA
+
+    </div>
+
+
+    <div id="message">
+
+        MAMÁ Y PAPÁ LOS AMAMOS MUCHO.
+
+    </div>
+
+
+    <div id="update">
+
+        CLIMA: ESPERANDO
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
 <script>
 
-/*
- ============================================================
- CASIO FAMILY DASHBOARD V5.2
- MAXIMA LEGIBILIDAD
- HORA MAS BAJA
- VALDIVIA - CHILE
- Compatible con Safari iOS 9
- ============================================================
-*/
+
+/* =========================================================
+   CASIO FAMILY TIME V6
+   Compatible con Safari iOS 9
+   ========================================================= */
+
 
 
 /* =========================================================
    FECHA
    ========================================================= */
 
+
 var DIAS = [
+
     "DOM",
     "LUN",
     "MAR",
@@ -627,7 +903,20 @@ var DIAS = [
 ];
 
 
+var DIAS_LARGOS = [
+
+    "DOMINGO",
+    "LUNES",
+    "MARTES",
+    "MIÉRCOLES",
+    "JUEVES",
+    "VIERNES",
+    "SÁBADO"
+];
+
+
 var MESES = [
+
     "ENE",
     "FEB",
     "MAR",
@@ -646,6 +935,7 @@ var MESES = [
 function pad(numero) {
 
     if (numero < 10) {
+
         return "0" + numero;
     }
 
@@ -658,28 +948,52 @@ function pad(numero) {
    RELOJ
    ========================================================= */
 
+
 function actualizarReloj() {
+
 
     var ahora =
         new Date();
 
 
     ponerTexto(
+
         "clock",
-        pad(ahora.getHours()) +
+
+        pad(
+            ahora.getHours()
+        ) +
+
         ":" +
-        pad(ahora.getMinutes())
+
+        pad(
+            ahora.getMinutes()
+        )
     );
 
 
     ponerTexto(
+
         "date",
-        DIAS[ahora.getDay()] +
+
+        DIAS[
+            ahora.getDay()
+        ] +
+
         " " +
-        pad(ahora.getDate()) +
+
+        pad(
+            ahora.getDate()
+        ) +
+
         "-" +
-        MESES[ahora.getMonth()] +
+
+        MESES[
+            ahora.getMonth()
+        ] +
+
         "-" +
+
         ahora.getFullYear()
     );
 }
@@ -687,136 +1001,99 @@ function actualizarReloj() {
 
 
 /* =========================================================
-   MENSAJES DE MAÑANA
+   MENSAJES FAMILIARES POR DIA
    ========================================================= */
 
-var MENSAJES_MANANA = [
 
-    "¡BUENOS DÍAS! ESTUDIEN, APRENDAN Y DEN SIEMPRE LO MEJOR DE USTEDES. MAMÁ Y PAPÁ LOS AMAMOS MUCHO.",
+var MENSAJES_DIA = [
 
-    "QUE HOY SEA UN GRAN DÍA. ESTUDIEN CON GANAS, PÓRTENSE BIEN Y RECUERDEN QUE MAMÁ Y PAPÁ LOS AMAMOS MUCHÍSIMO.",
 
-    "¡MUY BUENOS DÍAS! APRENDAN COSAS NUEVAS, SEAN AMABLES Y CARIÑOSOS. MAMÁ Y PAPÁ LOS AMAMOS MUCHO.",
+    /* DOMINGO */
 
-    "COMIENCEN EL DÍA CON UNA SONRISA. ESTUDIEN, SEAN BUENOS CON LOS DEMÁS Y AYÚDENSE SIEMPRE. LOS AMAMOS.",
+    "DISFRUTEN ESTE DOMINGO JUNTOS, DESCANSEN, JUEGUEN Y CUÍDENSE MUCHO. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-    "QUE TENGAN UN LINDO DÍA. APRENDAN MUCHO, PÓRTENSE BIEN Y SEAN SIEMPRE CARIÑOSOS. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-    "HOY ES UN NUEVO DÍA PARA APRENDER Y SER FELICES. SEAN AMABLES Y DEN LO MEJOR DE USTEDES. LOS AMAMOS MUCHO.",
+    /* LUNES */
 
-    "¡ARRIBA, NIÑOS! ESTUDIEN, APRENDAN Y TRATEN A TODOS CON MUCHO CARIÑO. MAMÁ Y PAPÁ LOS AMAMOS.",
+    "COMIENCEN LA SEMANA CON ALEGRÍA. ESTUDIEN, APRENDAN Y AYÚDENSE SIEMPRE. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-    "QUE COMIENCEN EL DÍA FELICES Y CON GANAS DE APRENDER. SEAN BUENOS, CARIÑOSOS Y RESPETUOSOS. LOS AMAMOS."
+
+    /* MARTES */
+
+    "QUE TENGAN UN GRAN DÍA. APRENDAN COSAS NUEVAS, SEAN AMABLES Y DEN LO MEJOR DE USTEDES. LOS AMAMOS.",
+
+
+    /* MIERCOLES */
+
+    "SIGAN ADELANTE CON MUCHA ENERGÍA. ESTUDIEN, SEAN CARIÑOSOS Y CUÍDENSE ENTRE USTEDES. LOS AMAMOS.",
+
+
+    /* JUEVES */
+
+    "QUE HOY SEA UN DÍA LLENO DE APRENDIZAJE Y ALEGRÍA. PÓRTENSE BIEN Y AYÚDENSE SIEMPRE. LOS AMAMOS.",
+
+
+    /* VIERNES */
+
+    "¡FELIZ VIERNES! TERMINEN MUY BIEN LA SEMANA, APRENDAN Y DISFRUTEN JUNTOS. MAMÁ Y PAPÁ LOS AMAMOS.",
+
+
+    /* SABADO */
+
+    "¡FELIZ SÁBADO! JUEGUEN, DESCANSEN Y DISFRUTEN JUNTOS. CUÍDENSE Y SEAN MUY CARIÑOSOS. LOS AMAMOS."
 ];
 
 
-
-/* =========================================================
-   MENSAJES DE TARDE
-   ========================================================= */
-
-var MENSAJES_TARDE = [
-
-    "QUE TENGAN UNA LINDA TARDE. JUEGUEN, APRENDAN Y SEAN MUY CARIÑOSOS ENTRE USTEDES. MAMÁ Y PAPÁ LOS AMAMOS.",
-
-    "DISFRUTEN LA TARDE, PÓRTENSE BIEN Y RECUERDEN AYUDARSE Y CUIDARSE SIEMPRE. LOS AMAMOS MUCHÍSIMO.",
-
-    "SIGAN DISFRUTANDO EL DÍA. SEAN AMABLES, CARIÑOSOS Y BUENOS CON LOS DEMÁS. MAMÁ Y PAPÁ LOS AMAMOS.",
-
-    "QUE TENGAN UNA HERMOSA TARDE. JUEGUEN, RÍAN, APRENDAN Y COMPARTAN CON CARIÑO. LOS AMAMOS MUCHO.",
-
-    "SER BUENOS Y CARIÑOSOS ES TAN IMPORTANTE COMO APRENDER. CUÍDENSE Y AYÚDENSE SIEMPRE. LOS AMAMOS.",
-
-    "DISFRUTEN ESTA TARDE. PÓRTENSE BIEN Y TRÁTENSE SIEMPRE CON MUCHO CARIÑO. MAMÁ Y PAPÁ LOS AMAMOS.",
-
-    "QUE ESTA TARDE ESTÉ LLENA DE JUEGOS, RISAS Y COSAS NUEVAS POR APRENDER. SEAN MUY BUENOS. LOS AMAMOS.",
-
-    "CUÍDENSE, AYÚDENSE Y SEAN SIEMPRE CARIÑOSOS ENTRE USTEDES. MAMÁ Y PAPÁ LOS AMAMOS MUCHÍSIMO."
-];
-
-
-
-/* =========================================================
-   MENSAJES DE NOCHE
-   ========================================================= */
-
-var MENSAJES_NOCHE = [
-
-    "QUE TERMINEN MUY BIEN EL DÍA. DESCANSEN Y RECUERDEN QUE MAMÁ Y PAPÁ LOS AMAMOS MÁS QUE A NADA.",
-
-    "ES HORA DE DESCANSAR. QUE TENGAN DULCES SUEÑOS Y RECUERDEN SIEMPRE CUÁNTO LOS AMAMOS.",
-
-    "DESCANSEN MUY BIEN. MAÑANA SERÁ OTRO DÍA PARA APRENDER, JUGAR Y SER FELICES. MAMÁ Y PAPÁ LOS AMAMOS.",
-
-    "TERMINEN EL DÍA CON UNA SONRISA. SEAN SIEMPRE CARIÑOSOS Y CUÍDENSE MUCHO. LOS AMAMOS.",
-
-    "BUENAS NOCHES. DESCANSEN, SUEÑEN BONITO Y RECUERDEN QUE MAMÁ Y PAPÁ SIEMPRE ESTAMOS CON USTEDES.",
-
-    "HOY TERMINA OTRO DÍA JUNTOS. DESCANSEN Y PREPÁRENSE PARA MAÑANA. MAMÁ Y PAPÁ LOS AMAMOS MUCHÍSIMO.",
-
-    "QUE TENGAN UNA NOCHE TRANQUILA Y FELIZ. DUERMAN BIEN Y RECUERDEN QUE SON MUY AMADOS.",
-
-    "QUE TENGAN DULCES SUEÑOS. MAMÁ Y PAPÁ LOS AMAMOS CON TODO NUESTRO CORAZÓN."
-];
-
-
-
-/* =========================================================
-   MENSAJE AUTOMATICO
-   ========================================================= */
 
 function actualizarMensaje() {
+
 
     var ahora =
         new Date();
 
+
     var hora =
         ahora.getHours();
 
-    var lista;
+
+    var dia =
+        ahora.getDay();
+
+
+    var mensaje;
+
+
+    /*
+     * De noche mantenemos un mensaje
+     * más tranquilo.
+     */
 
 
     if (
-        hora >= 5 &&
-        hora < 12
+        hora >= 20 ||
+        hora < 5
     ) {
 
-        lista =
-            MENSAJES_MANANA;
 
-    } else if (
-        hora >= 12 &&
-        hora < 20
-    ) {
+        mensaje =
+            "DESCANSEN MUY BIEN. MAÑANA SERÁ OTRO DÍA PARA APRENDER, JUGAR Y SER FELICES. MAMÁ Y PAPÁ LOS AMAMOS.";
 
-        lista =
-            MENSAJES_TARDE;
 
     } else {
 
-        lista =
-            MENSAJES_NOCHE;
+
+        mensaje =
+            MENSAJES_DIA[
+                dia
+            ];
     }
 
 
-    var bloque =
-        Math.floor(
-            ahora.getMinutes() / 30
-        );
-
-
-    var indice =
-        (
-            ahora.getDate() * 2 +
-            bloque +
-            hora
-        ) %
-        lista.length;
-
-
     ponerTexto(
+
         "message",
-        lista[indice]
+
+        mensaje
     );
 }
 
@@ -826,71 +1103,94 @@ function actualizarMensaje() {
    DESCRIPCION DEL CLIMA
    ========================================================= */
 
+
 function descripcionClima(codigo) {
+
 
     codigo =
         Number(codigo);
 
 
     if (codigo === 0) {
+
         return "DESPEJADO";
     }
 
+
     if (codigo === 1) {
+
         return "MAYOR. DESPEJADO";
     }
 
+
     if (codigo === 2) {
+
         return "PARC. NUBLADO";
     }
 
+
     if (codigo === 3) {
+
         return "NUBLADO";
     }
+
 
     if (
         codigo === 45 ||
         codigo === 48
     ) {
+
         return "NIEBLA";
     }
+
 
     if (
         codigo >= 51 &&
         codigo <= 57
     ) {
+
         return "LLOVIZNA";
     }
+
 
     if (
         codigo >= 61 &&
         codigo <= 67
     ) {
+
         return "LLUVIA";
     }
+
 
     if (
         codigo >= 71 &&
         codigo <= 77
     ) {
+
         return "NIEVE";
     }
+
 
     if (
         codigo >= 80 &&
         codigo <= 82
     ) {
+
         return "CHUBASCOS";
     }
+
 
     if (
         codigo === 85 ||
         codigo === 86
     ) {
+
         return "NIEVE";
     }
 
+
     if (codigo >= 95) {
+
         return "TORMENTA";
     }
 
@@ -901,29 +1201,64 @@ function descripcionClima(codigo) {
 
 
 /* =========================================================
-   HORA SOLAR
+   DIA DEL PRONOSTICO
+   Evitamos Date("YYYY-MM-DD") por compatibilidad iOS 9
    ========================================================= */
 
-function horaSolar(valor) {
 
-    if (!valor) {
-        return "--:--";
+function diaPronostico(fecha) {
+
+
+    if (!fecha) {
+
+        return "---";
     }
 
 
-    var posicion =
-        valor.indexOf("T");
+    var partes =
+        fecha.split("-");
 
 
-    if (posicion < 0) {
-        return "--:--";
+    if (
+        partes.length !== 3
+    ) {
+
+        return "---";
     }
 
 
-    return valor.substring(
-        posicion + 1,
-        posicion + 6
-    );
+    var anio =
+        Number(
+            partes[0]
+        );
+
+
+    var mes =
+        Number(
+            partes[1]
+        ) - 1;
+
+
+    var dia =
+        Number(
+            partes[2]
+        );
+
+
+    var fechaLocal =
+        new Date(
+            anio,
+            mes,
+            dia,
+            12,
+            0,
+            0
+        );
+
+
+    return DIAS[
+        fechaLocal.getDay()
+    ];
 }
 
 
@@ -932,16 +1267,21 @@ function horaSolar(valor) {
    CLIMA
    ========================================================= */
 
+
 function cargarClima() {
+
 
     var xhr =
         new XMLHttpRequest();
 
 
     xhr.open(
+
         "GET",
+
         "/api/weather?t=" +
         new Date().getTime(),
+
         true
     );
 
@@ -950,16 +1290,23 @@ function cargarClima() {
         function() {
 
 
-            if (xhr.readyState !== 4) {
+            if (
+                xhr.readyState !== 4
+            ) {
+
                 return;
             }
 
 
-            if (xhr.status !== 200) {
+            if (
+                xhr.status !== 200
+            ) {
+
 
                 mostrarErrorClima(
                     "SIN CONEXIÓN"
                 );
+
 
                 return;
             }
@@ -976,25 +1323,40 @@ function cargarClima() {
 
                 if (!datos.ok) {
 
+
                     mostrarErrorClima(
                         "SIN DATOS"
                     );
+
 
                     return;
                 }
 
 
+
+                /* TEMPERATURA */
+
+
                 ponerTexto(
+
                     "temperature",
+
                     redondear(
                         datos.temperature
                     ) +
+
                     '<span id="degree">°C</span>'
                 );
 
 
+
+                /* DATOS ACTUALES */
+
+
                 ponerTexto(
+
                     "feels",
+
                     redondear(
                         datos.feels
                     )
@@ -1002,7 +1364,9 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "humidity",
+
                     redondear(
                         datos.humidity
                     )
@@ -1010,7 +1374,9 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "wind",
+
                     redondear(
                         datos.wind
                     )
@@ -1018,51 +1384,55 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "condition",
+
                     descripcionClima(
                         datos.weatherCode
                     )
                 );
 
 
-                ponerTexto(
-                    "maxTemp",
-                    redondear(
-                        datos.max
-                    )
+
+                /* PRONOSTICO */
+
+
+                if (
+                    datos.forecast &&
+                    datos.forecast.length >= 3
+                ) {
+
+
+                    mostrarDiaPronostico(
+                        1,
+                        datos.forecast[0]
+                    );
+
+
+                    mostrarDiaPronostico(
+                        2,
+                        datos.forecast[1]
+                    );
+
+
+                    mostrarDiaPronostico(
+                        3,
+                        datos.forecast[2]
+                    );
+                }
+
+
+
+                /* AVISO PARAGUAS */
+
+
+                actualizarAviso(
+                    datos
                 );
 
 
-                ponerTexto(
-                    "minTemp",
-                    redondear(
-                        datos.min
-                    )
-                );
 
-
-                ponerTexto(
-                    "rain",
-                    redondear(
-                        datos.rain
-                    )
-                );
-
-
-                ponerTexto(
-                    "sunrise",
-                    horaSolar(
-                        datos.sunrise
-                    )
-                );
-
-
-                ponerTexto(
-                    "sunset",
-                    horaSolar(
-                        datos.sunset
-                    )
-                );
+                /* HORA ACTUALIZACION */
 
 
                 var ahora =
@@ -1070,12 +1440,17 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "update",
-                    "ACTUALIZADO " +
+
+                    "CLIMA " +
+
                     pad(
                         ahora.getHours()
                     ) +
+
                     ":" +
+
                     pad(
                         ahora.getMinutes()
                     )
@@ -1088,7 +1463,6 @@ function cargarClima() {
                 mostrarErrorClima(
                     "ERROR DATOS"
                 );
-
             }
 
         };
@@ -1097,10 +1471,10 @@ function cargarClima() {
     xhr.onerror =
         function() {
 
+
             mostrarErrorClima(
                 "SIN CONEXIÓN"
             );
-
         };
 
 
@@ -1110,10 +1484,164 @@ function cargarClima() {
 
 
 /* =========================================================
+   MOSTRAR PRONOSTICO
+   ========================================================= */
+
+
+function mostrarDiaPronostico(
+    numero,
+    datos
+) {
+
+
+    ponerTexto(
+
+        "day" + numero,
+
+        diaPronostico(
+            datos.date
+        )
+    );
+
+
+    ponerTexto(
+
+        "temp" + numero,
+
+        redondear(
+            datos.max
+        ) +
+
+        "° / " +
+
+        redondear(
+            datos.min
+        ) +
+
+        "°"
+    );
+
+
+    ponerTexto(
+
+        "rain" + numero,
+
+        "☂ " +
+
+        redondear(
+            datos.rain
+        ) +
+
+        "%"
+    );
+}
+
+
+
+/* =========================================================
+   AVISO AUTOMATICO
+   ========================================================= */
+
+
+function actualizarAviso(datos) {
+
+
+    var lluviaHoy =
+        Number(
+            datos.rain
+        );
+
+
+    var codigo =
+        Number(
+            datos.weatherCode
+        );
+
+
+    /*
+     * Si ya esta lloviendo:
+     */
+
+
+    if (
+        (
+            codigo >= 51 &&
+            codigo <= 67
+        ) ||
+
+        (
+            codigo >= 80 &&
+            codigo <= 82
+        ) ||
+
+        codigo >= 95
+    ) {
+
+
+        ponerTexto(
+
+            "weatherAlert",
+
+            "☂ LLUVIA · LLEVAR PARAGUAS"
+        );
+
+
+        return;
+    }
+
+
+    /*
+     * Probabilidad alta:
+     */
+
+
+    if (
+        !isNaN(lluviaHoy) &&
+        lluviaHoy >= 60
+    ) {
+
+
+        ponerTexto(
+
+            "weatherAlert",
+
+            "☂ LLEVAR PARAGUAS · LLUVIA " +
+
+            Math.round(
+                lluviaHoy
+            ) +
+
+            "%"
+        );
+
+
+        return;
+    }
+
+
+    /*
+     * Si no hay aviso importante,
+     * dejamos algo muy simple.
+     */
+
+
+    ponerTexto(
+
+        "weatherAlert",
+
+        "✓ SIN AVISOS"
+    );
+}
+
+
+
+/* =========================================================
    AUXILIARES
    ========================================================= */
 
+
 function redondear(valor) {
+
 
     if (
         valor === null ||
@@ -1128,23 +1656,35 @@ function redondear(valor) {
         Number(valor);
 
 
-    if (isNaN(numero)) {
+    if (
+        isNaN(numero)
+    ) {
+
         return "--";
     }
 
 
-    return Math.round(numero);
+    return Math.round(
+        numero
+    );
 }
 
 
 
-function ponerTexto(id, contenido) {
+function ponerTexto(
+    id,
+    contenido
+) {
+
 
     var elemento =
-        document.getElementById(id);
+        document.getElementById(
+            id
+        );
 
 
     if (elemento) {
+
 
         elemento.innerHTML =
             contenido;
@@ -1155,15 +1695,28 @@ function ponerTexto(id, contenido) {
 
 function mostrarErrorClima(texto) {
 
+
     ponerTexto(
+
         "condition",
+
         texto
     );
 
 
     ponerTexto(
-        "update",
+
+        "weatherAlert",
+
         "CLIMA NO DISPONIBLE"
+    );
+
+
+    ponerTexto(
+
+        "update",
+
+        "SIN ACTUALIZAR"
     );
 }
 
@@ -1173,42 +1726,85 @@ function mostrarErrorClima(texto) {
    BORDES
    ========================================================= */
 
+
 function aplicarBordes(color) {
 
+
     var watch =
-        document.getElementById("watch");
+        document.getElementById(
+            "watch"
+        );
+
 
     var header =
-        document.getElementById("header");
+        document.getElementById(
+            "header"
+        );
+
 
     var clockArea =
-        document.getElementById("clockArea");
+        document.getElementById(
+            "clockArea"
+        );
+
 
     var information =
-        document.getElementById("information");
+        document.getElementById(
+            "information"
+        );
+
 
     var weather =
-        document.getElementById("weather");
+        document.getElementById(
+            "weather"
+        );
+
+
+    var alertArea =
+        document.getElementById(
+            "alertArea"
+        );
 
 
     if (watch) {
-        watch.style.borderColor = color;
+
+        watch.style.borderColor =
+            color;
     }
+
 
     if (header) {
-        header.style.borderBottomColor = color;
+
+        header.style.borderBottomColor =
+            color;
     }
+
 
     if (clockArea) {
-        clockArea.style.borderBottomColor = color;
+
+        clockArea.style.borderBottomColor =
+            color;
     }
+
 
     if (information) {
-        information.style.borderBottomColor = color;
+
+        information.style.borderBottomColor =
+            color;
     }
 
+
     if (weather) {
-        weather.style.borderRightColor = color;
+
+        weather.style.borderRightColor =
+            color;
+    }
+
+
+    if (alertArea) {
+
+        alertArea.style.borderBottomColor =
+            color;
     }
 
 
@@ -1227,6 +1823,7 @@ function aplicarBordes(color) {
         i++
     ) {
 
+
         botones[i].style.borderColor =
             color;
     }
@@ -1238,43 +1835,63 @@ function aplicarBordes(color) {
    TEMAS
    ========================================================= */
 
+
 function setTheme(tema) {
 
+
     var watch =
-        document.getElementById("watch");
+        document.getElementById(
+            "watch"
+        );
+
 
     var clock =
-        document.getElementById("clock");
+        document.getElementById(
+            "clock"
+        );
+
 
     var temperature =
-        document.getElementById("temperature");
+        document.getElementById(
+            "temperature"
+        );
 
 
     if (!watch) {
+
         return;
     }
 
 
-    if (tema === "green") {
+
+    if (
+        tema === "green"
+    ) {
+
 
         document.body.style.background =
             "#080b06";
 
+
         watch.style.background =
             "#11180c";
+
 
         watch.style.color =
             "#b8d870";
 
+
         aplicarBordes(
             "#4a6228"
         );
+
 
         if (clock) {
 
             clock.style.textShadow =
                 "0 0 14px #93bd39";
         }
+
 
         if (temperature) {
 
@@ -1284,26 +1901,35 @@ function setTheme(tema) {
     }
 
 
-    if (tema === "blue") {
+
+    if (
+        tema === "blue"
+    ) {
+
 
         document.body.style.background =
             "#03080c";
 
+
         watch.style.background =
             "#07131c";
+
 
         watch.style.color =
             "#70b8d8";
 
+
         aplicarBordes(
             "#315d70"
         );
+
 
         if (clock) {
 
             clock.style.textShadow =
                 "0 0 14px #429bc4";
         }
+
 
         if (temperature) {
 
@@ -1313,37 +1939,55 @@ function setTheme(tema) {
     }
 
 
-    if (tema === "white") {
+
+    if (
+        tema === "white"
+    ) {
+
 
         document.body.style.background =
             "#d5d5d0";
 
+
         watch.style.background =
             "#eeeeea";
 
+
         watch.style.color =
             "#111111";
+
 
         aplicarBordes(
             "#333333"
         );
 
+
         if (clock) {
-            clock.style.textShadow = "none";
+
+            clock.style.textShadow =
+                "none";
         }
 
+
         if (temperature) {
-            temperature.style.textShadow = "none";
+
+            temperature.style.textShadow =
+                "none";
         }
     }
 
 
+
     try {
 
+
         localStorage.setItem(
+
             "casio-theme",
+
             tema
         );
+
 
     } catch (e) {
 
@@ -1353,16 +1997,19 @@ function setTheme(tema) {
 
 
 /* =========================================================
-   RECUPERAR TEMA
+   CARGAR TEMA
    ========================================================= */
 
+
 function cargarTema() {
+
 
     var tema =
         "green";
 
 
     try {
+
 
         var guardado =
             localStorage.getItem(
@@ -1371,8 +2018,11 @@ function cargarTema() {
 
 
         if (guardado) {
-            tema = guardado;
+
+            tema =
+                guardado;
         }
+
 
     } catch (e) {
 
@@ -1391,11 +2041,13 @@ function cargarTema() {
    22:30 - 07:00
    ========================================================= */
 
+
 var modoNocheActivo =
     false;
 
 
 function comprobarModoNocturno() {
+
 
     var ahora =
         new Date();
@@ -1421,27 +2073,30 @@ function comprobarModoNocturno() {
         );
 
 
-    if (
-        esNoche &&
-        !modoNocheActivo
-    ) {
+    if (esNoche) {
+
 
         activarModoNoche();
 
+
         modoNocheActivo =
             true;
-    }
 
 
-    if (
-        !esNoche &&
-        modoNocheActivo
-    ) {
+    } else {
 
-        cargarTema();
 
-        modoNocheActivo =
-            false;
+        if (
+            modoNocheActivo
+        ) {
+
+
+            modoNocheActivo =
+                false;
+
+
+            cargarTema();
+        }
     }
 }
 
@@ -1449,14 +2104,23 @@ function comprobarModoNocturno() {
 
 function activarModoNoche() {
 
+
     var watch =
-        document.getElementById("watch");
+        document.getElementById(
+            "watch"
+        );
+
 
     var clock =
-        document.getElementById("clock");
+        document.getElementById(
+            "clock"
+        );
+
 
     var temperature =
-        document.getElementById("temperature");
+        document.getElementById(
+            "temperature"
+        );
 
 
     document.body.style.background =
@@ -1465,8 +2129,10 @@ function activarModoNoche() {
 
     if (watch) {
 
+
         watch.style.background =
             "#060906";
+
 
         watch.style.color =
             "#627640";
@@ -1480,12 +2146,14 @@ function activarModoNoche() {
 
     if (clock) {
 
+
         clock.style.textShadow =
             "0 0 5px #344820";
     }
 
 
     if (temperature) {
+
 
         temperature.style.textShadow =
             "0 0 4px #344820";
@@ -1498,45 +2166,71 @@ function activarModoNoche() {
    INICIO
    ========================================================= */
 
+
 function iniciar() {
+
 
     actualizarReloj();
 
+
     actualizarMensaje();
+
 
     cargarTema();
 
+
     comprobarModoNocturno();
+
 
     cargarClima();
 
 
-    /* RELOJ */
+
+    /*
+     * RELOJ
+     */
+
 
     setInterval(
+
         actualizarReloj,
+
         1000
     );
 
 
-    /* MENSAJES + MODO NOCTURNO */
+
+    /*
+     * MENSAJE + MODO NOCTURNO
+     */
+
 
     setInterval(
+
         function() {
 
+
             actualizarMensaje();
+
 
             comprobarModoNocturno();
 
         },
+
         60000
     );
 
 
-    /* CLIMA CADA 10 MINUTOS */
+
+    /*
+     * CLIMA CADA 10 MINUTOS
+     */
+
 
     setInterval(
+
         cargarClima,
+
         600000
     );
 }
@@ -1544,7 +2238,10 @@ function iniciar() {
 
 iniciar();
 
+
 </script>
 
+
 </body>
+
 </html>
