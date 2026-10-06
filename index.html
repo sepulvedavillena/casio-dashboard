@@ -17,31 +17,26 @@
     content="black"
 >
 
-<title>
-CASIO FAMILY TIME
-</title>
+<title>CASIO FAMILY TIME</title>
 
 
 <style>
 
 /* =========================================================
-   CASIO FAMILY TIME V6
-   VALDIVIA
-   SEPULVEDA ALCAINO
+   CASIO FAMILY TIME V6.1
+   VALDIVIA · SEPULVEDA ALCAINO
 
-   Compatible Safari / iOS 9
+   FECHA Y PRONOSTICO MAS GRANDES
+   Compatible Safari iOS 9
    ========================================================= */
 
 
 html,
 body {
-
     margin: 0;
-
     padding: 0;
 
     width: 100%;
-
     height: 100%;
 
     overflow: hidden;
@@ -56,7 +51,6 @@ body {
 
 
 body {
-
     color: #b8d870;
 
     -webkit-user-select: none;
@@ -69,15 +63,12 @@ body {
 
 
 #watch {
-
     position: absolute;
 
     left: 0.3%;
-
     top: 0.3%;
 
     width: 99.4%;
-
     height: 99.4%;
 
     box-sizing: border-box;
@@ -97,7 +88,6 @@ body {
 
 
 #header {
-
     position: relative;
 
     height: 6%;
@@ -110,11 +100,9 @@ body {
 
 
 #brand {
-
     position: absolute;
 
     left: 1.2%;
-
     top: 17%;
 
     font-size: 1.62vw;
@@ -126,17 +114,14 @@ body {
 
 
 #themes {
-
     position: absolute;
 
     right: 0.8%;
-
     top: 7%;
 }
 
 
 .themeButton {
-
     display: inline-block;
 
     margin-left: 3px;
@@ -161,7 +146,6 @@ body {
 
 
 #clockArea {
-
     position: relative;
 
     height: 39%;
@@ -174,7 +158,6 @@ body {
 
 
 #clock {
-
     position: absolute;
 
     left: 0;
@@ -198,25 +181,27 @@ body {
 }
 
 
-#date {
+/*
+ * FECHA AUMENTADA
+ */
 
+#date {
     position: absolute;
 
     left: 0;
-
     bottom: 0;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 4vw;
+    font-size: 4.8vw;
 
-    line-height: 1;
+    line-height: 0.95;
 
     font-weight: bold;
 
-    letter-spacing: 0.06em;
+    letter-spacing: 0.035em;
 }
 
 
@@ -227,7 +212,6 @@ body {
 
 
 #information {
-
     position: relative;
 
     height: 36%;
@@ -246,15 +230,12 @@ body {
 
 
 #weather {
-
     position: absolute;
 
     left: 0;
-
     top: 0;
 
     width: 50%;
-
     height: 100%;
 
     box-sizing: border-box;
@@ -268,26 +249,27 @@ body {
 
 
 .sectionTitle {
-
-    font-size: 2vw;
+    font-size: 2.1vw;
 
     line-height: 1;
 
     font-weight: bold;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.035em;
 }
 
 
-#temperature {
+/*
+ * TEMPERATURA ACTUAL
+ */
 
+#temperature {
     position: absolute;
 
     left: 2.5%;
+    top: 24%;
 
-    top: 25%;
-
-    font-size: 9.7vw;
+    font-size: 10.3vw;
 
     line-height: 0.78;
 
@@ -299,24 +281,21 @@ body {
 
 
 #degree {
-
-    font-size: 2.8vw;
+    font-size: 3vw;
 
     vertical-align: top;
 }
 
 
 #condition {
-
     position: absolute;
 
     left: 2.5%;
-
     bottom: 5%;
 
     width: 48%;
 
-    font-size: 2vw;
+    font-size: 2.15vw;
 
     line-height: 1;
 
@@ -324,31 +303,32 @@ body {
 }
 
 
-#weatherData {
+/*
+ * SENSACION / HUMEDAD / VIENTO
+ */
 
+#weatherData {
     position: absolute;
 
     left: 51%;
-
-    top: 25%;
+    top: 24%;
 
     width: 48%;
 
-    font-size: 2.05vw;
+    font-size: 2.25vw;
 
-    line-height: 1.5;
+    line-height: 1.48;
 
     font-weight: bold;
 
-    letter-spacing: -0.025em;
+    letter-spacing: -0.035em;
 }
 
 
 .value {
-
     font-weight: bold;
 
-    font-size: 1.16em;
+    font-size: 1.20em;
 }
 
 
@@ -359,94 +339,107 @@ body {
 
 
 #forecast {
-
     position: absolute;
 
     left: 50%;
-
     top: 0;
 
     width: 50%;
-
     height: 100%;
 
     box-sizing: border-box;
 
     padding:
-        0.8% 1.4%;
+        0.8% 1.1%;
 }
 
 
 #forecastRows {
-
     position: absolute;
 
-    left: 3%;
+    left: 2%;
 
-    top: 24%;
+    top: 22%;
 
-    width: 95%;
+    width: 97%;
 }
 
 
-.forecastRow {
+/*
+ * FILAS MAS GRANDES
+ */
 
+.forecastRow {
     position: relative;
 
     height: 31%;
 
     white-space: nowrap;
 
-    font-size: 2.4vw;
+    font-size: 2.75vw;
 
-    line-height: 1.42;
+    line-height: 1.38;
 
     font-weight: bold;
 
-    letter-spacing: -0.045em;
+    letter-spacing: -0.055em;
 }
 
 
-.forecastDay {
+/*
+ * DIA
+ */
 
+.forecastDay {
     display: inline-block;
 
     width: 17%;
 
-    font-size: 1.05em;
+    font-size: 1em;
 }
 
+
+/*
+ * TEMPERATURAS
+ *
+ * Aproximadamente 3.1vw reales.
+ */
 
 .forecastTemp {
-
     display: inline-block;
 
-    width: 48%;
+    width: 50%;
 
     font-size: 1.12em;
+
+    font-weight: bold;
 }
 
 
-.forecastRain {
+/*
+ * LLUVIA
+ */
 
+.forecastRain {
     display: inline-block;
 
-    width: 31%;
+    width: 28%;
 
     text-align: right;
 
-    font-size: 1.05em;
+    font-size: 0.95em;
+
+    font-weight: bold;
 }
 
 
 
 /* =========================================================
-   AVISO
+   AVISO METEOROLOGICO
    ========================================================= */
 
 
 #alertArea {
-
     position: relative;
 
     height: 6%;
@@ -459,24 +452,22 @@ body {
 
 
 #weatherAlert {
-
     position: absolute;
 
     left: 0;
-
-    top: 9%;
+    top: 7%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 2.25vw;
+    font-size: 2.35vw;
 
     line-height: 1;
 
     font-weight: bold;
 
-    letter-spacing: 0.07em;
+    letter-spacing: 0.055em;
 }
 
 
@@ -487,7 +478,6 @@ body {
 
 
 #messageArea {
-
     position: relative;
 
     height: 13%;
@@ -497,11 +487,9 @@ body {
 
 
 #messageTitle {
-
     position: absolute;
 
     left: 1.2%;
-
     top: 5%;
 
     font-size: 1.25vw;
@@ -515,11 +503,9 @@ body {
 
 
 #message {
-
     position: absolute;
 
     left: 1.2%;
-
     top: 27%;
 
     width: 97.6%;
@@ -535,11 +521,9 @@ body {
 
 
 #update {
-
     position: absolute;
 
     right: 0.7%;
-
     bottom: 1%;
 
     font-size: 0.85vw;
@@ -570,14 +554,11 @@ body {
 
 
     <div id="brand">
-
         CASIO FAMILY TIME · VALDIVIA · SEPULVEDA ALCAINO
-
     </div>
 
 
     <div id="themes">
-
 
         <span
             class="themeButton"
@@ -586,7 +567,6 @@ body {
             GRN
         </span>
 
-
         <span
             class="themeButton"
             onclick="setTheme('blue')"
@@ -594,14 +574,12 @@ body {
             BLU
         </span>
 
-
         <span
             class="themeButton"
             onclick="setTheme('white')"
         >
             B&amp;W
         </span>
-
 
     </div>
 
@@ -619,16 +597,12 @@ body {
 
 
     <div id="clock">
-
         --:--
-
     </div>
 
 
     <div id="date">
-
         CARGANDO
-
     </div>
 
 
@@ -651,9 +625,7 @@ body {
 
 
         <div class="sectionTitle">
-
             ▲ CLIMA / AHORA
-
         </div>
 
 
@@ -665,14 +637,11 @@ body {
 
 
         <div id="condition">
-
             CARGANDO...
-
         </div>
 
 
         <div id="weatherData">
-
 
             SENS.
 
@@ -683,9 +652,7 @@ body {
                 --
             </span>°
 
-
             <br>
-
 
             HUM.
 
@@ -696,9 +663,7 @@ body {
                 --
             </span>%
 
-
             <br>
-
 
             VIENTO
 
@@ -708,7 +673,6 @@ body {
             >
                 --
             </span>
-
 
         </div>
 
@@ -724,9 +688,7 @@ body {
 
 
         <div class="sectionTitle">
-
             ■ PRÓXIMOS 3 DÍAS
-
         </div>
 
 
@@ -822,7 +784,7 @@ body {
 
 
 <!-- ======================================================
-     AVISO METEOROLOGICO
+     AVISO
      ====================================================== -->
 
 
@@ -830,9 +792,7 @@ body {
 
 
     <div id="weatherAlert">
-
         CLIMA ACTUALIZANDO...
-
     </div>
 
 
@@ -849,23 +809,17 @@ body {
 
 
     <div id="messageTitle">
-
         ♥ BORJA · MILA · MAITE · CLARA
-
     </div>
 
 
     <div id="message">
-
         MAMÁ Y PAPÁ LOS AMAMOS MUCHO.
-
     </div>
 
 
     <div id="update">
-
         CLIMA: ESPERANDO
-
     </div>
 
 
@@ -880,8 +834,8 @@ body {
 
 
 /* =========================================================
-   CASIO FAMILY TIME V6
-   Compatible con Safari iOS 9
+   CASIO FAMILY TIME V6.1
+   Compatible Safari iOS 9
    ========================================================= */
 
 
@@ -892,7 +846,6 @@ body {
 
 
 var DIAS = [
-
     "DOM",
     "LUN",
     "MAR",
@@ -903,20 +856,7 @@ var DIAS = [
 ];
 
 
-var DIAS_LARGOS = [
-
-    "DOMINGO",
-    "LUNES",
-    "MARTES",
-    "MIÉRCOLES",
-    "JUEVES",
-    "VIERNES",
-    "SÁBADO"
-];
-
-
 var MESES = [
-
     "ENE",
     "FEB",
     "MAR",
@@ -1001,44 +941,30 @@ function actualizarReloj() {
 
 
 /* =========================================================
-   MENSAJES FAMILIARES POR DIA
+   MENSAJES POR DIA
    ========================================================= */
 
 
 var MENSAJES_DIA = [
 
 
-    /* DOMINGO */
-
     "DISFRUTEN ESTE DOMINGO JUNTOS, DESCANSEN, JUEGUEN Y CUÍDENSE MUCHO. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-
-    /* LUNES */
 
     "COMIENCEN LA SEMANA CON ALEGRÍA. ESTUDIEN, APRENDAN Y AYÚDENSE SIEMPRE. MAMÁ Y PAPÁ LOS AMAMOS.",
 
 
-    /* MARTES */
-
     "QUE TENGAN UN GRAN DÍA. APRENDAN COSAS NUEVAS, SEAN AMABLES Y DEN LO MEJOR DE USTEDES. LOS AMAMOS.",
 
-
-    /* MIERCOLES */
 
     "SIGAN ADELANTE CON MUCHA ENERGÍA. ESTUDIEN, SEAN CARIÑOSOS Y CUÍDENSE ENTRE USTEDES. LOS AMAMOS.",
 
 
-    /* JUEVES */
-
     "QUE HOY SEA UN DÍA LLENO DE APRENDIZAJE Y ALEGRÍA. PÓRTENSE BIEN Y AYÚDENSE SIEMPRE. LOS AMAMOS.",
 
 
-    /* VIERNES */
-
     "¡FELIZ VIERNES! TERMINEN MUY BIEN LA SEMANA, APRENDAN Y DISFRUTEN JUNTOS. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-
-    /* SABADO */
 
     "¡FELIZ SÁBADO! JUEGUEN, DESCANSEN Y DISFRUTEN JUNTOS. CUÍDENSE Y SEAN MUY CARIÑOSOS. LOS AMAMOS."
 ];
@@ -1063,12 +989,6 @@ function actualizarMensaje() {
     var mensaje;
 
 
-    /*
-     * De noche mantenemos un mensaje
-     * más tranquilo.
-     */
-
-
     if (
         hora >= 20 ||
         hora < 5
@@ -1090,9 +1010,7 @@ function actualizarMensaje() {
 
 
     ponerTexto(
-
         "message",
-
         mensaje
     );
 }
@@ -1100,7 +1018,7 @@ function actualizarMensaje() {
 
 
 /* =========================================================
-   DESCRIPCION DEL CLIMA
+   DESCRIPCION CLIMA
    ========================================================= */
 
 
@@ -1112,25 +1030,21 @@ function descripcionClima(codigo) {
 
 
     if (codigo === 0) {
-
         return "DESPEJADO";
     }
 
 
     if (codigo === 1) {
-
         return "MAYOR. DESPEJADO";
     }
 
 
     if (codigo === 2) {
-
         return "PARC. NUBLADO";
     }
 
 
     if (codigo === 3) {
-
         return "NUBLADO";
     }
 
@@ -1139,7 +1053,6 @@ function descripcionClima(codigo) {
         codigo === 45 ||
         codigo === 48
     ) {
-
         return "NIEBLA";
     }
 
@@ -1148,7 +1061,6 @@ function descripcionClima(codigo) {
         codigo >= 51 &&
         codigo <= 57
     ) {
-
         return "LLOVIZNA";
     }
 
@@ -1157,7 +1069,6 @@ function descripcionClima(codigo) {
         codigo >= 61 &&
         codigo <= 67
     ) {
-
         return "LLUVIA";
     }
 
@@ -1166,7 +1077,6 @@ function descripcionClima(codigo) {
         codigo >= 71 &&
         codigo <= 77
     ) {
-
         return "NIEVE";
     }
 
@@ -1175,7 +1085,6 @@ function descripcionClima(codigo) {
         codigo >= 80 &&
         codigo <= 82
     ) {
-
         return "CHUBASCOS";
     }
 
@@ -1184,13 +1093,11 @@ function descripcionClima(codigo) {
         codigo === 85 ||
         codigo === 86
     ) {
-
         return "NIEVE";
     }
 
 
     if (codigo >= 95) {
-
         return "TORMENTA";
     }
 
@@ -1202,7 +1109,6 @@ function descripcionClima(codigo) {
 
 /* =========================================================
    DIA DEL PRONOSTICO
-   Evitamos Date("YYYY-MM-DD") por compatibilidad iOS 9
    ========================================================= */
 
 
@@ -1334,9 +1240,6 @@ function cargarClima() {
 
 
 
-                /* TEMPERATURA */
-
-
                 ponerTexto(
 
                     "temperature",
@@ -1348,9 +1251,6 @@ function cargarClima() {
                     '<span id="degree">°C</span>'
                 );
 
-
-
-                /* DATOS ACTUALES */
 
 
                 ponerTexto(
@@ -1394,9 +1294,6 @@ function cargarClima() {
 
 
 
-                /* PRONOSTICO */
-
-
                 if (
                     datos.forecast &&
                     datos.forecast.length >= 3
@@ -1423,16 +1320,10 @@ function cargarClima() {
 
 
 
-                /* AVISO PARAGUAS */
-
-
                 actualizarAviso(
                     datos
                 );
 
-
-
-                /* HORA ACTUALIZACION */
 
 
                 var ahora =
@@ -1484,7 +1375,7 @@ function cargarClima() {
 
 
 /* =========================================================
-   MOSTRAR PRONOSTICO
+   PRONOSTICO
    ========================================================= */
 
 
@@ -1539,7 +1430,7 @@ function mostrarDiaPronostico(
 
 
 /* =========================================================
-   AVISO AUTOMATICO
+   AVISO
    ========================================================= */
 
 
@@ -1556,11 +1447,6 @@ function actualizarAviso(datos) {
         Number(
             datos.weatherCode
         );
-
-
-    /*
-     * Si ya esta lloviendo:
-     */
 
 
     if (
@@ -1590,11 +1476,6 @@ function actualizarAviso(datos) {
     }
 
 
-    /*
-     * Probabilidad alta:
-     */
-
-
     if (
         !isNaN(lluviaHoy) &&
         lluviaHoy >= 60
@@ -1617,12 +1498,6 @@ function actualizarAviso(datos) {
 
         return;
     }
-
-
-    /*
-     * Si no hay aviso importante,
-     * dejamos algo muy simple.
-     */
 
 
     ponerTexto(
@@ -1685,7 +1560,6 @@ function ponerTexto(
 
     if (elemento) {
 
-
         elemento.innerHTML =
             contenido;
     }
@@ -1697,25 +1571,19 @@ function mostrarErrorClima(texto) {
 
 
     ponerTexto(
-
         "condition",
-
         texto
     );
 
 
     ponerTexto(
-
         "weatherAlert",
-
         "CLIMA NO DISPONIBLE"
     );
 
 
     ponerTexto(
-
         "update",
-
         "SIN ACTUALIZAR"
     );
 }
@@ -1767,44 +1635,32 @@ function aplicarBordes(color) {
 
 
     if (watch) {
-
-        watch.style.borderColor =
-            color;
+        watch.style.borderColor = color;
     }
 
 
     if (header) {
-
-        header.style.borderBottomColor =
-            color;
+        header.style.borderBottomColor = color;
     }
 
 
     if (clockArea) {
-
-        clockArea.style.borderBottomColor =
-            color;
+        clockArea.style.borderBottomColor = color;
     }
 
 
     if (information) {
-
-        information.style.borderBottomColor =
-            color;
+        information.style.borderBottomColor = color;
     }
 
 
     if (weather) {
-
-        weather.style.borderRightColor =
-            color;
+        weather.style.borderRightColor = color;
     }
 
 
     if (alertArea) {
-
-        alertArea.style.borderBottomColor =
-            color;
+        alertArea.style.borderBottomColor = color;
     }
 
 
@@ -2038,7 +1894,6 @@ function cargarTema() {
 
 /* =========================================================
    MODO NOCTURNO
-   22:30 - 07:00
    ========================================================= */
 
 
@@ -2186,23 +2041,11 @@ function iniciar() {
 
 
 
-    /*
-     * RELOJ
-     */
-
-
     setInterval(
-
         actualizarReloj,
-
         1000
     );
 
-
-
-    /*
-     * MENSAJE + MODO NOCTURNO
-     */
 
 
     setInterval(
@@ -2222,15 +2065,8 @@ function iniciar() {
 
 
 
-    /*
-     * CLIMA CADA 10 MINUTOS
-     */
-
-
     setInterval(
-
         cargarClima,
-
         600000
     );
 }
