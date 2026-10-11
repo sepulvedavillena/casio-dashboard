@@ -23,16 +23,19 @@
 <style>
 
 /* =========================================================
-   CASIO FAMILY TIME V6.1
+   CASIO FAMILY TIME V6.2
    VALDIVIA · SEPULVEDA ALCAINO
 
-   FECHA Y PRONOSTICO MAS GRANDES
+   + MAXIMA Y MINIMA HOY
+   + PROXIMO PARTIDO COLO-COLO
+
    Compatible Safari iOS 9
    ========================================================= */
 
 
 html,
 body {
+
     margin: 0;
     padding: 0;
 
@@ -51,6 +54,7 @@ body {
 
 
 body {
+
     color: #b8d870;
 
     -webkit-user-select: none;
@@ -63,6 +67,7 @@ body {
 
 
 #watch {
+
     position: absolute;
 
     left: 0.3%;
@@ -73,9 +78,11 @@ body {
 
     box-sizing: border-box;
 
-    border: 2px solid #4a6228;
+    border:
+        2px solid #4a6228;
 
-    background: #11180c;
+    background:
+        #11180c;
 
     overflow: hidden;
 }
@@ -88,6 +95,7 @@ body {
 
 
 #header {
+
     position: relative;
 
     height: 6%;
@@ -100,6 +108,7 @@ body {
 
 
 #brand {
+
     position: absolute;
 
     left: 1.2%;
@@ -114,6 +123,7 @@ body {
 
 
 #themes {
+
     position: absolute;
 
     right: 0.8%;
@@ -122,6 +132,7 @@ body {
 
 
 .themeButton {
+
     display: inline-block;
 
     margin-left: 3px;
@@ -146,9 +157,10 @@ body {
 
 
 #clockArea {
+
     position: relative;
 
-    height: 39%;
+    height: 38%;
 
     box-sizing: border-box;
 
@@ -158,11 +170,12 @@ body {
 
 
 #clock {
+
     position: absolute;
 
     left: 0;
 
-    top: 9%;
+    top: 8%;
 
     width: 100%;
 
@@ -181,14 +194,12 @@ body {
 }
 
 
-/*
- * FECHA AUMENTADA
- */
-
 #date {
+
     position: absolute;
 
     left: 0;
+
     bottom: 0;
 
     width: 100%;
@@ -212,9 +223,10 @@ body {
 
 
 #information {
+
     position: relative;
 
-    height: 36%;
+    height: 33%;
 
     box-sizing: border-box;
 
@@ -230,6 +242,7 @@ body {
 
 
 #weather {
+
     position: absolute;
 
     left: 0;
@@ -249,7 +262,8 @@ body {
 
 
 .sectionTitle {
-    font-size: 2.1vw;
+
+    font-size: 1.9vw;
 
     line-height: 1;
 
@@ -259,17 +273,14 @@ body {
 }
 
 
-/*
- * TEMPERATURA ACTUAL
- */
-
 #temperature {
+
     position: absolute;
 
     left: 2.5%;
     top: 24%;
 
-    font-size: 10.3vw;
+    font-size: 9.4vw;
 
     line-height: 0.78;
 
@@ -281,21 +292,24 @@ body {
 
 
 #degree {
-    font-size: 3vw;
+
+    font-size: 2.8vw;
 
     vertical-align: top;
 }
 
 
 #condition {
+
     position: absolute;
 
     left: 2.5%;
-    bottom: 5%;
 
-    width: 48%;
+    top: 65%;
 
-    font-size: 2.15vw;
+    width: 46%;
+
+    font-size: 2vw;
 
     line-height: 1;
 
@@ -303,21 +317,19 @@ body {
 }
 
 
-/*
- * SENSACION / HUMEDAD / VIENTO
- */
-
 #weatherData {
+
     position: absolute;
 
     left: 51%;
-    top: 24%;
+
+    top: 22%;
 
     width: 48%;
 
-    font-size: 2.25vw;
+    font-size: 2.05vw;
 
-    line-height: 1.48;
+    line-height: 1.42;
 
     font-weight: bold;
 
@@ -326,19 +338,57 @@ body {
 
 
 .value {
+
     font-weight: bold;
 
-    font-size: 1.20em;
+    font-size: 1.18em;
 }
 
 
 
 /* =========================================================
-   PRONOSTICO 3 DIAS
+   MAXIMA Y MINIMA HOY
+   ========================================================= */
+
+
+#todayMinMax {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 3%;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 2.5vw;
+
+    line-height: 1;
+
+    font-weight: bold;
+
+    letter-spacing: 0.01em;
+}
+
+
+.todayTemperature {
+
+    font-size: 1.18em;
+
+    font-weight: bold;
+}
+
+
+
+/* =========================================================
+   PRONOSTICO
    ========================================================= */
 
 
 #forecast {
+
     position: absolute;
 
     left: 50%;
@@ -355,30 +405,28 @@ body {
 
 
 #forecastRows {
+
     position: absolute;
 
     left: 2%;
 
-    top: 22%;
+    top: 23%;
 
     width: 97%;
 }
 
 
-/*
- * FILAS MAS GRANDES
- */
-
 .forecastRow {
+
     position: relative;
 
     height: 31%;
 
     white-space: nowrap;
 
-    font-size: 2.75vw;
+    font-size: 2.55vw;
 
-    line-height: 1.38;
+    line-height: 1.36;
 
     font-weight: bold;
 
@@ -386,26 +434,16 @@ body {
 }
 
 
-/*
- * DIA
- */
-
 .forecastDay {
+
     display: inline-block;
 
     width: 17%;
-
-    font-size: 1em;
 }
 
 
-/*
- * TEMPERATURAS
- *
- * Aproximadamente 3.1vw reales.
- */
-
 .forecastTemp {
+
     display: inline-block;
 
     width: 50%;
@@ -416,11 +454,8 @@ body {
 }
 
 
-/*
- * LLUVIA
- */
-
 .forecastRain {
+
     display: inline-block;
 
     width: 28%;
@@ -435,14 +470,15 @@ body {
 
 
 /* =========================================================
-   AVISO METEOROLOGICO
+   ALERTA CLIMA
    ========================================================= */
 
 
 #alertArea {
+
     position: relative;
 
-    height: 6%;
+    height: 5%;
 
     box-sizing: border-box;
 
@@ -452,16 +488,17 @@ body {
 
 
 #weatherAlert {
+
     position: absolute;
 
     left: 0;
-    top: 7%;
+    top: 8%;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 2.35vw;
+    font-size: 2vw;
 
     line-height: 1;
 
@@ -473,26 +510,71 @@ body {
 
 
 /* =========================================================
+   COLO COLO
+   ========================================================= */
+
+
+#footballArea {
+
+    position: relative;
+
+    height: 7%;
+
+    box-sizing: border-box;
+
+    border-bottom:
+        1px solid #4a6228;
+}
+
+
+#football {
+
+    position: absolute;
+
+    left: 1%;
+
+    top: 16%;
+
+    width: 98%;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    font-size: 2.25vw;
+
+    line-height: 1;
+
+    font-weight: bold;
+
+    letter-spacing: -0.02em;
+}
+
+
+
+/* =========================================================
    MENSAJE FAMILIAR
    ========================================================= */
 
 
 #messageArea {
+
     position: relative;
 
-    height: 13%;
+    height: 11%;
 
     box-sizing: border-box;
 }
 
 
 #messageTitle {
+
     position: absolute;
 
     left: 1.2%;
     top: 5%;
 
-    font-size: 1.25vw;
+    font-size: 1.15vw;
 
     font-weight: bold;
 
@@ -503,16 +585,17 @@ body {
 
 
 #message {
+
     position: absolute;
 
     left: 1.2%;
-    top: 27%;
+    top: 28%;
 
     width: 97.6%;
 
     text-align: center;
 
-    font-size: 1.85vw;
+    font-size: 1.65vw;
 
     line-height: 1.12;
 
@@ -521,12 +604,13 @@ body {
 
 
 #update {
+
     position: absolute;
 
     right: 0.7%;
     bottom: 1%;
 
-    font-size: 0.85vw;
+    font-size: 0.75vw;
 
     font-weight: bold;
 
@@ -545,13 +629,7 @@ body {
 <div id="watch">
 
 
-<!-- ======================================================
-     CABECERA
-     ====================================================== -->
-
-
 <div id="header">
-
 
     <div id="brand">
         CASIO FAMILY TIME · VALDIVIA · SEPULVEDA ALCAINO
@@ -583,42 +661,31 @@ body {
 
     </div>
 
-
 </div>
 
 
 
-<!-- ======================================================
-     RELOJ
-     ====================================================== -->
+<!-- RELOJ -->
 
 
 <div id="clockArea">
-
 
     <div id="clock">
         --:--
     </div>
 
-
     <div id="date">
         CARGANDO
     </div>
-
 
 </div>
 
 
 
-<!-- ======================================================
-     INFORMACION
-     ====================================================== -->
+<!-- INFORMACION -->
 
 
 <div id="information">
-
-
-    <!-- CLIMA ACTUAL -->
 
 
     <div id="weather">
@@ -677,11 +744,33 @@ body {
         </div>
 
 
+        <div id="todayMinMax">
+
+            MÁX
+
+            <span
+                class="todayTemperature"
+                id="todayMax"
+            >
+                --
+            </span>°
+
+            ·
+
+            MÍN
+
+            <span
+                class="todayTemperature"
+                id="todayMin"
+            >
+                --
+            </span>°
+
+        </div>
+
+
     </div>
 
-
-
-    <!-- PRONOSTICO -->
 
 
     <div id="forecast">
@@ -775,53 +864,54 @@ body {
 
         </div>
 
-
     </div>
-
 
 </div>
 
 
 
-<!-- ======================================================
-     AVISO
-     ====================================================== -->
+<!-- ALERTA -->
 
 
 <div id="alertArea">
-
 
     <div id="weatherAlert">
         CLIMA ACTUALIZANDO...
     </div>
 
+</div>
+
+
+
+<!-- COLO COLO -->
+
+
+<div id="footballArea">
+
+    <div id="football">
+        ⚽ COLO-COLO · CARGANDO PRÓXIMO PARTIDO...
+    </div>
 
 </div>
 
 
 
-<!-- ======================================================
-     MENSAJE FAMILIAR
-     ====================================================== -->
+<!-- MENSAJE -->
 
 
 <div id="messageArea">
-
 
     <div id="messageTitle">
         ♥ BORJA · MILA · MAITE · CLARA
     </div>
 
-
     <div id="message">
         MAMÁ Y PAPÁ LOS AMAMOS MUCHO.
     </div>
 
-
     <div id="update">
         CLIMA: ESPERANDO
     </div>
-
 
 </div>
 
@@ -834,14 +924,8 @@ body {
 
 
 /* =========================================================
-   CASIO FAMILY TIME V6.1
-   Compatible Safari iOS 9
-   ========================================================= */
-
-
-
-/* =========================================================
-   FECHA
+   CASIO FAMILY TIME V6.2
+   Safari iOS 9
    ========================================================= */
 
 
@@ -875,7 +959,6 @@ var MESES = [
 function pad(numero) {
 
     if (numero < 10) {
-
         return "0" + numero;
     }
 
@@ -890,7 +973,6 @@ function pad(numero) {
 
 
 function actualizarReloj() {
-
 
     var ahora =
         new Date();
@@ -941,50 +1023,38 @@ function actualizarReloj() {
 
 
 /* =========================================================
-   MENSAJES POR DIA
+   MENSAJES
    ========================================================= */
 
 
 var MENSAJES_DIA = [
 
-
     "DISFRUTEN ESTE DOMINGO JUNTOS, DESCANSEN, JUEGUEN Y CUÍDENSE MUCHO. MAMÁ Y PAPÁ LOS AMAMOS.",
-
 
     "COMIENCEN LA SEMANA CON ALEGRÍA. ESTUDIEN, APRENDAN Y AYÚDENSE SIEMPRE. MAMÁ Y PAPÁ LOS AMAMOS.",
 
-
     "QUE TENGAN UN GRAN DÍA. APRENDAN COSAS NUEVAS, SEAN AMABLES Y DEN LO MEJOR DE USTEDES. LOS AMAMOS.",
-
 
     "SIGAN ADELANTE CON MUCHA ENERGÍA. ESTUDIEN, SEAN CARIÑOSOS Y CUÍDENSE ENTRE USTEDES. LOS AMAMOS.",
 
-
     "QUE HOY SEA UN DÍA LLENO DE APRENDIZAJE Y ALEGRÍA. PÓRTENSE BIEN Y AYÚDENSE SIEMPRE. LOS AMAMOS.",
 
-
     "¡FELIZ VIERNES! TERMINEN MUY BIEN LA SEMANA, APRENDAN Y DISFRUTEN JUNTOS. MAMÁ Y PAPÁ LOS AMAMOS.",
-
 
     "¡FELIZ SÁBADO! JUEGUEN, DESCANSEN Y DISFRUTEN JUNTOS. CUÍDENSE Y SEAN MUY CARIÑOSOS. LOS AMAMOS."
 ];
 
 
-
 function actualizarMensaje() {
-
 
     var ahora =
         new Date();
 
-
     var hora =
         ahora.getHours();
 
-
     var dia =
         ahora.getDay();
-
 
     var mensaje;
 
@@ -994,13 +1064,10 @@ function actualizarMensaje() {
         hora < 5
     ) {
 
-
         mensaje =
             "DESCANSEN MUY BIEN. MAÑANA SERÁ OTRO DÍA PARA APRENDER, JUGAR Y SER FELICES. MAMÁ Y PAPÁ LOS AMAMOS.";
 
-
     } else {
-
 
         mensaje =
             MENSAJES_DIA[
@@ -1018,12 +1085,11 @@ function actualizarMensaje() {
 
 
 /* =========================================================
-   DESCRIPCION CLIMA
+   CLIMA
    ========================================================= */
 
 
 function descripcionClima(codigo) {
-
 
     codigo =
         Number(codigo);
@@ -1033,21 +1099,17 @@ function descripcionClima(codigo) {
         return "DESPEJADO";
     }
 
-
     if (codigo === 1) {
         return "MAYOR. DESPEJADO";
     }
-
 
     if (codigo === 2) {
         return "PARC. NUBLADO";
     }
 
-
     if (codigo === 3) {
         return "NUBLADO";
     }
-
 
     if (
         codigo === 45 ||
@@ -1056,14 +1118,12 @@ function descripcionClima(codigo) {
         return "NIEBLA";
     }
 
-
     if (
         codigo >= 51 &&
         codigo <= 57
     ) {
         return "LLOVIZNA";
     }
-
 
     if (
         codigo >= 61 &&
@@ -1072,14 +1132,12 @@ function descripcionClima(codigo) {
         return "LLUVIA";
     }
 
-
     if (
         codigo >= 71 &&
         codigo <= 77
     ) {
         return "NIEVE";
     }
-
 
     if (
         codigo >= 80 &&
@@ -1088,14 +1146,12 @@ function descripcionClima(codigo) {
         return "CHUBASCOS";
     }
 
-
     if (
         codigo === 85 ||
         codigo === 86
     ) {
         return "NIEVE";
     }
-
 
     if (codigo >= 95) {
         return "TORMENTA";
@@ -1107,16 +1163,9 @@ function descripcionClima(codigo) {
 
 
 
-/* =========================================================
-   DIA DEL PRONOSTICO
-   ========================================================= */
-
-
 function diaPronostico(fecha) {
 
-
     if (!fecha) {
-
         return "---";
     }
 
@@ -1128,34 +1177,15 @@ function diaPronostico(fecha) {
     if (
         partes.length !== 3
     ) {
-
         return "---";
     }
 
 
-    var anio =
-        Number(
-            partes[0]
-        );
-
-
-    var mes =
-        Number(
-            partes[1]
-        ) - 1;
-
-
-    var dia =
-        Number(
-            partes[2]
-        );
-
-
     var fechaLocal =
         new Date(
-            anio,
-            mes,
-            dia,
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2]),
             12,
             0,
             0
@@ -1169,13 +1199,7 @@ function diaPronostico(fecha) {
 
 
 
-/* =========================================================
-   CLIMA
-   ========================================================= */
-
-
 function cargarClima() {
-
 
     var xhr =
         new XMLHttpRequest();
@@ -1199,7 +1223,6 @@ function cargarClima() {
             if (
                 xhr.readyState !== 4
             ) {
-
                 return;
             }
 
@@ -1208,11 +1231,9 @@ function cargarClima() {
                 xhr.status !== 200
             ) {
 
-
                 mostrarErrorClima(
                     "SIN CONEXIÓN"
                 );
-
 
                 return;
             }
@@ -1229,11 +1250,9 @@ function cargarClima() {
 
                 if (!datos.ok) {
 
-
                     mostrarErrorClima(
                         "SIN DATOS"
                     );
-
 
                     return;
                 }
@@ -1254,9 +1273,7 @@ function cargarClima() {
 
 
                 ponerTexto(
-
                     "feels",
-
                     redondear(
                         datos.feels
                     )
@@ -1264,9 +1281,7 @@ function cargarClima() {
 
 
                 ponerTexto(
-
                     "humidity",
-
                     redondear(
                         datos.humidity
                     )
@@ -1274,9 +1289,7 @@ function cargarClima() {
 
 
                 ponerTexto(
-
                     "wind",
-
                     redondear(
                         datos.wind
                     )
@@ -1294,23 +1307,51 @@ function cargarClima() {
 
 
 
+                /*
+                 * MAXIMA Y MINIMA DE HOY
+                 */
+
+
+                ponerTexto(
+
+                    "todayMax",
+
+                    redondear(
+                        datos.max
+                    )
+                );
+
+
+                ponerTexto(
+
+                    "todayMin",
+
+                    redondear(
+                        datos.min
+                    )
+                );
+
+
+
+                /*
+                 * PRONOSTICO
+                 */
+
+
                 if (
                     datos.forecast &&
                     datos.forecast.length >= 3
                 ) {
-
 
                     mostrarDiaPronostico(
                         1,
                         datos.forecast[0]
                     );
 
-
                     mostrarDiaPronostico(
                         2,
                         datos.forecast[1]
                     );
-
 
                     mostrarDiaPronostico(
                         3,
@@ -1319,11 +1360,9 @@ function cargarClima() {
                 }
 
 
-
                 actualizarAviso(
                     datos
                 );
-
 
 
                 var ahora =
@@ -1350,7 +1389,6 @@ function cargarClima() {
 
             } catch (error) {
 
-
                 mostrarErrorClima(
                     "ERROR DATOS"
                 );
@@ -1361,7 +1399,6 @@ function cargarClima() {
 
     xhr.onerror =
         function() {
-
 
             mostrarErrorClima(
                 "SIN CONEXIÓN"
@@ -1383,7 +1420,6 @@ function mostrarDiaPronostico(
     numero,
     datos
 ) {
-
 
     ponerTexto(
 
@@ -1430,12 +1466,11 @@ function mostrarDiaPronostico(
 
 
 /* =========================================================
-   AVISO
+   ALERTA
    ========================================================= */
 
 
 function actualizarAviso(datos) {
-
 
     var lluviaHoy =
         Number(
@@ -1463,14 +1498,10 @@ function actualizarAviso(datos) {
         codigo >= 95
     ) {
 
-
         ponerTexto(
-
             "weatherAlert",
-
             "☂ LLUVIA · LLEVAR PARAGUAS"
         );
-
 
         return;
     }
@@ -1480,7 +1511,6 @@ function actualizarAviso(datos) {
         !isNaN(lluviaHoy) &&
         lluviaHoy >= 60
     ) {
-
 
         ponerTexto(
 
@@ -1495,16 +1525,186 @@ function actualizarAviso(datos) {
             "%"
         );
 
-
         return;
     }
 
 
     ponerTexto(
-
         "weatherAlert",
-
         "✓ SIN AVISOS"
+    );
+}
+
+
+
+/* =========================================================
+   COLO COLO
+   ========================================================= */
+
+
+function cargarColoColo() {
+
+    var xhr =
+        new XMLHttpRequest();
+
+
+    xhr.open(
+
+        "GET",
+
+        "/api/colocolo?t=" +
+        new Date().getTime(),
+
+        true
+    );
+
+
+    xhr.onreadystatechange =
+        function() {
+
+
+            if (
+                xhr.readyState !== 4
+            ) {
+                return;
+            }
+
+
+            if (
+                xhr.status !== 200
+            ) {
+
+                ponerTexto(
+                    "football",
+                    "⚽ COLO-COLO · INFORMACIÓN NO DISPONIBLE"
+                );
+
+                return;
+            }
+
+
+            try {
+
+
+                var datos =
+                    JSON.parse(
+                        xhr.responseText
+                    );
+
+
+                if (
+                    !datos.ok ||
+                    !datos.available
+                ) {
+
+                    ponerTexto(
+                        "football",
+                        "⚽ COLO-COLO · PRÓXIMO PARTIDO POR CONFIRMAR"
+                    );
+
+                    return;
+                }
+
+
+                var fecha =
+                    fechaPartidoTexto(
+                        datos.date
+                    );
+
+
+                var texto;
+
+
+                if (datos.home) {
+
+                    texto =
+                        "⚽ COLO-COLO · " +
+                        fecha +
+                        " · " +
+                        datos.time +
+                        " · vs " +
+                        datos.rival;
+
+                } else {
+
+                    texto =
+                        "⚽ COLO-COLO · " +
+                        fecha +
+                        " · " +
+                        datos.time +
+                        " · vs " +
+                        datos.rival +
+                        " (VISITA)";
+                }
+
+
+                ponerTexto(
+                    "football",
+                    texto
+                );
+
+
+            } catch (error) {
+
+                ponerTexto(
+                    "football",
+                    "⚽ COLO-COLO · INFORMACIÓN NO DISPONIBLE"
+                );
+            }
+
+        };
+
+
+    xhr.send(null);
+}
+
+
+
+function fechaPartidoTexto(fecha) {
+
+    if (!fecha) {
+        return "---";
+    }
+
+
+    var partes =
+        fecha.split("-");
+
+
+    if (
+        partes.length !== 3
+    ) {
+        return "---";
+    }
+
+
+    var fechaLocal =
+        new Date(
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2]),
+            12,
+            0,
+            0
+        );
+
+
+    return (
+        DIAS[
+            fechaLocal.getDay()
+        ] +
+
+        " " +
+
+        Number(
+            partes[2]
+        ) +
+
+        " " +
+
+        MESES[
+            Number(partes[1]) - 1
+        ]
     );
 }
 
@@ -1517,12 +1717,10 @@ function actualizarAviso(datos) {
 
 function redondear(valor) {
 
-
     if (
         valor === null ||
         typeof valor === "undefined"
     ) {
-
         return "--";
     }
 
@@ -1534,7 +1732,6 @@ function redondear(valor) {
     if (
         isNaN(numero)
     ) {
-
         return "--";
     }
 
@@ -1550,7 +1747,6 @@ function ponerTexto(
     id,
     contenido
 ) {
-
 
     var elemento =
         document.getElementById(
@@ -1568,7 +1764,6 @@ function ponerTexto(
 
 
 function mostrarErrorClima(texto) {
-
 
     ponerTexto(
         "condition",
@@ -1597,70 +1792,96 @@ function mostrarErrorClima(texto) {
 
 function aplicarBordes(color) {
 
+    var ids = [
+        "watch",
+        "header",
+        "clockArea",
+        "information",
+        "weather",
+        "alertArea",
+        "footballArea"
+    ];
 
-    var watch =
+
+    var i;
+
+    var elemento;
+
+
+    elemento =
         document.getElementById(
             "watch"
         );
 
+    if (elemento) {
+        elemento.style.borderColor =
+            color;
+    }
 
-    var header =
+
+    elemento =
         document.getElementById(
             "header"
         );
 
+    if (elemento) {
+        elemento.style.borderBottomColor =
+            color;
+    }
 
-    var clockArea =
+
+    elemento =
         document.getElementById(
             "clockArea"
         );
 
+    if (elemento) {
+        elemento.style.borderBottomColor =
+            color;
+    }
 
-    var information =
+
+    elemento =
         document.getElementById(
             "information"
         );
 
+    if (elemento) {
+        elemento.style.borderBottomColor =
+            color;
+    }
 
-    var weather =
+
+    elemento =
         document.getElementById(
             "weather"
         );
 
+    if (elemento) {
+        elemento.style.borderRightColor =
+            color;
+    }
 
-    var alertArea =
+
+    elemento =
         document.getElementById(
             "alertArea"
         );
 
-
-    if (watch) {
-        watch.style.borderColor = color;
+    if (elemento) {
+        elemento.style.borderBottomColor =
+            color;
     }
 
 
-    if (header) {
-        header.style.borderBottomColor = color;
-    }
+    elemento =
+        document.getElementById(
+            "footballArea"
+        );
 
-
-    if (clockArea) {
-        clockArea.style.borderBottomColor = color;
-    }
-
-
-    if (information) {
-        information.style.borderBottomColor = color;
-    }
-
-
-    if (weather) {
-        weather.style.borderRightColor = color;
-    }
-
-
-    if (alertArea) {
-        alertArea.style.borderBottomColor = color;
+    if (elemento) {
+        elemento.style.borderBottomColor =
+            color;
     }
 
 
@@ -1670,15 +1891,11 @@ function aplicarBordes(color) {
         );
 
 
-    var i;
-
-
     for (
         i = 0;
         i < botones.length;
         i++
     ) {
-
 
         botones[i].style.borderColor =
             color;
@@ -1693,7 +1910,6 @@ function aplicarBordes(color) {
 
 
 function setTheme(tema) {
-
 
     var watch =
         document.getElementById(
@@ -1714,7 +1930,6 @@ function setTheme(tema) {
 
 
     if (!watch) {
-
         return;
     }
 
@@ -1724,33 +1939,25 @@ function setTheme(tema) {
         tema === "green"
     ) {
 
-
         document.body.style.background =
             "#080b06";
-
 
         watch.style.background =
             "#11180c";
 
-
         watch.style.color =
             "#b8d870";
-
 
         aplicarBordes(
             "#4a6228"
         );
 
-
         if (clock) {
-
             clock.style.textShadow =
                 "0 0 14px #93bd39";
         }
 
-
         if (temperature) {
-
             temperature.style.textShadow =
                 "0 0 12px #93bd39";
         }
@@ -1762,33 +1969,25 @@ function setTheme(tema) {
         tema === "blue"
     ) {
 
-
         document.body.style.background =
             "#03080c";
-
 
         watch.style.background =
             "#07131c";
 
-
         watch.style.color =
             "#70b8d8";
-
 
         aplicarBordes(
             "#315d70"
         );
 
-
         if (clock) {
-
             clock.style.textShadow =
                 "0 0 14px #429bc4";
         }
 
-
         if (temperature) {
-
             temperature.style.textShadow =
                 "0 0 12px #429bc4";
         }
@@ -1800,50 +1999,37 @@ function setTheme(tema) {
         tema === "white"
     ) {
 
-
         document.body.style.background =
             "#d5d5d0";
-
 
         watch.style.background =
             "#eeeeea";
 
-
         watch.style.color =
             "#111111";
-
 
         aplicarBordes(
             "#333333"
         );
 
-
         if (clock) {
-
             clock.style.textShadow =
                 "none";
         }
 
-
         if (temperature) {
-
             temperature.style.textShadow =
                 "none";
         }
     }
 
 
-
     try {
 
-
         localStorage.setItem(
-
             "casio-theme",
-
             tema
         );
-
 
     } catch (e) {
 
@@ -1852,20 +2038,13 @@ function setTheme(tema) {
 
 
 
-/* =========================================================
-   CARGAR TEMA
-   ========================================================= */
-
-
 function cargarTema() {
-
 
     var tema =
         "green";
 
 
     try {
-
 
         var guardado =
             localStorage.getItem(
@@ -1874,11 +2053,9 @@ function cargarTema() {
 
 
         if (guardado) {
-
             tema =
                 guardado;
         }
-
 
     } catch (e) {
 
@@ -1902,7 +2079,6 @@ var modoNocheActivo =
 
 
 function comprobarModoNocturno() {
-
 
     var ahora =
         new Date();
@@ -1930,25 +2106,19 @@ function comprobarModoNocturno() {
 
     if (esNoche) {
 
-
         activarModoNoche();
-
 
         modoNocheActivo =
             true;
 
-
     } else {
-
 
         if (
             modoNocheActivo
         ) {
 
-
             modoNocheActivo =
                 false;
-
 
             cargarTema();
         }
@@ -1958,7 +2128,6 @@ function comprobarModoNocturno() {
 
 
 function activarModoNoche() {
-
 
     var watch =
         document.getElementById(
@@ -1984,10 +2153,8 @@ function activarModoNoche() {
 
     if (watch) {
 
-
         watch.style.background =
             "#060906";
-
 
         watch.style.color =
             "#627640";
@@ -2001,14 +2168,12 @@ function activarModoNoche() {
 
     if (clock) {
 
-
         clock.style.textShadow =
             "0 0 5px #344820";
     }
 
 
     if (temperature) {
-
 
         temperature.style.textShadow =
             "0 0 4px #344820";
@@ -2024,22 +2189,22 @@ function activarModoNoche() {
 
 function iniciar() {
 
-
     actualizarReloj();
-
 
     actualizarMensaje();
 
-
     cargarTema();
-
 
     comprobarModoNocturno();
 
-
     cargarClima();
 
+    cargarColoColo();
 
+
+    /*
+     * RELOJ
+     */
 
     setInterval(
         actualizarReloj,
@@ -2047,14 +2212,15 @@ function iniciar() {
     );
 
 
+    /*
+     * MENSAJE + NOCHE
+     */
 
     setInterval(
 
         function() {
 
-
             actualizarMensaje();
-
 
             comprobarModoNocturno();
 
@@ -2064,10 +2230,25 @@ function iniciar() {
     );
 
 
+    /*
+     * CLIMA
+     * 10 MINUTOS
+     */
 
     setInterval(
         cargarClima,
         600000
+    );
+
+
+    /*
+     * COLO COLO
+     * 30 MINUTOS
+     */
+
+    setInterval(
+        cargarColoColo,
+        1800000
     );
 }
 
