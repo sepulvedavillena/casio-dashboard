@@ -23,10 +23,12 @@
 <style>
 
 /* =========================================================
-   CASIO FAMILY TIME V6.2
+   CASIO FAMILY TIME V6.3
    VALDIVIA · SEPULVEDA ALCAINO
 
    + MAXIMA Y MINIMA HOY
+   + PRONOSTICO 3 DIAS
+   + ALERTA HOY / MANANA
    + PROXIMO PARTIDO COLO-COLO
 
    Compatible Safari iOS 9
@@ -504,7 +506,7 @@ body {
 
     font-weight: bold;
 
-    letter-spacing: 0.055em;
+    letter-spacing: 0.045em;
 }
 
 
@@ -629,6 +631,9 @@ body {
 <div id="watch">
 
 
+<!-- CABECERA -->
+
+
 <div id="header">
 
     <div id="brand">
@@ -686,6 +691,9 @@ body {
 
 
 <div id="information">
+
+
+    <!-- CLIMA ACTUAL -->
 
 
     <div id="weather">
@@ -771,6 +779,9 @@ body {
 
     </div>
 
+
+
+    <!-- PRONOSTICO -->
 
 
     <div id="forecast">
@@ -870,7 +881,7 @@ body {
 
 
 
-<!-- ALERTA -->
+<!-- ALERTA CLIMA -->
 
 
 <div id="alertArea">
@@ -924,8 +935,8 @@ body {
 
 
 /* =========================================================
-   CASIO FAMILY TIME V6.2
-   Safari iOS 9
+   CASIO FAMILY TIME V6.3
+   Compatible Safari iOS 9
    ========================================================= */
 
 
@@ -959,6 +970,7 @@ var MESES = [
 function pad(numero) {
 
     if (numero < 10) {
+
         return "0" + numero;
     }
 
@@ -1050,11 +1062,14 @@ function actualizarMensaje() {
     var ahora =
         new Date();
 
+
     var hora =
         ahora.getHours();
 
+
     var dia =
         ahora.getDay();
+
 
     var mensaje;
 
@@ -1085,7 +1100,7 @@ function actualizarMensaje() {
 
 
 /* =========================================================
-   CLIMA
+   DESCRIPCION DEL CLIMA
    ========================================================= */
 
 
@@ -1099,17 +1114,21 @@ function descripcionClima(codigo) {
         return "DESPEJADO";
     }
 
+
     if (codigo === 1) {
         return "MAYOR. DESPEJADO";
     }
+
 
     if (codigo === 2) {
         return "PARC. NUBLADO";
     }
 
+
     if (codigo === 3) {
         return "NUBLADO";
     }
+
 
     if (
         codigo === 45 ||
@@ -1118,12 +1137,14 @@ function descripcionClima(codigo) {
         return "NIEBLA";
     }
 
+
     if (
         codigo >= 51 &&
         codigo <= 57
     ) {
         return "LLOVIZNA";
     }
+
 
     if (
         codigo >= 61 &&
@@ -1132,12 +1153,14 @@ function descripcionClima(codigo) {
         return "LLUVIA";
     }
 
+
     if (
         codigo >= 71 &&
         codigo <= 77
     ) {
         return "NIEVE";
     }
+
 
     if (
         codigo >= 80 &&
@@ -1146,6 +1169,7 @@ function descripcionClima(codigo) {
         return "CHUBASCOS";
     }
 
+
     if (
         codigo === 85 ||
         codigo === 86
@@ -1153,7 +1177,10 @@ function descripcionClima(codigo) {
         return "NIEVE";
     }
 
-    if (codigo >= 95) {
+
+    if (
+        codigo >= 95
+    ) {
         return "TORMENTA";
     }
 
@@ -1163,9 +1190,15 @@ function descripcionClima(codigo) {
 
 
 
+/* =========================================================
+   DIA DEL PRONOSTICO
+   ========================================================= */
+
+
 function diaPronostico(fecha) {
 
     if (!fecha) {
+
         return "---";
     }
 
@@ -1177,6 +1210,7 @@ function diaPronostico(fecha) {
     if (
         partes.length !== 3
     ) {
+
         return "---";
     }
 
@@ -1197,6 +1231,11 @@ function diaPronostico(fecha) {
     ];
 }
 
+
+
+/* =========================================================
+   CARGAR CLIMA
+   ========================================================= */
 
 
 function cargarClima() {
@@ -1223,6 +1262,7 @@ function cargarClima() {
             if (
                 xhr.readyState !== 4
             ) {
+
                 return;
             }
 
@@ -1241,7 +1281,6 @@ function cargarClima() {
 
             try {
 
-
                 var datos =
                     JSON.parse(
                         xhr.responseText
@@ -1259,6 +1298,11 @@ function cargarClima() {
 
 
 
+                /*
+                 * TEMPERATURA ACTUAL
+                 */
+
+
                 ponerTexto(
 
                     "temperature",
@@ -1273,7 +1317,9 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "feels",
+
                     redondear(
                         datos.feels
                     )
@@ -1281,7 +1327,9 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "humidity",
+
                     redondear(
                         datos.humidity
                     )
@@ -1289,7 +1337,9 @@ function cargarClima() {
 
 
                 ponerTexto(
+
                     "wind",
+
                     redondear(
                         datos.wind
                     )
@@ -1334,7 +1384,7 @@ function cargarClima() {
 
 
                 /*
-                 * PRONOSTICO
+                 * PRONOSTICO 3 DIAS
                  */
 
 
@@ -1348,10 +1398,12 @@ function cargarClima() {
                         datos.forecast[0]
                     );
 
+
                     mostrarDiaPronostico(
                         2,
                         datos.forecast[1]
                     );
+
 
                     mostrarDiaPronostico(
                         3,
@@ -1360,9 +1412,16 @@ function cargarClima() {
                 }
 
 
+
+                /*
+                 * NUEVA ALERTA V6.3
+                 */
+
+
                 actualizarAviso(
                     datos
                 );
+
 
 
                 var ahora =
@@ -1412,7 +1471,7 @@ function cargarClima() {
 
 
 /* =========================================================
-   PRONOSTICO
+   MOSTRAR PRONOSTICO
    ========================================================= */
 
 
@@ -1466,11 +1525,17 @@ function mostrarDiaPronostico(
 
 
 /* =========================================================
-   ALERTA
+   ALERTA INTELIGENTE V6.3
    ========================================================= */
 
 
 function actualizarAviso(datos) {
+
+    var codigoActual =
+        Number(
+            datos.weatherCode
+        );
+
 
     var lluviaHoy =
         Number(
@@ -1478,33 +1543,65 @@ function actualizarAviso(datos) {
         );
 
 
-    var codigo =
-        Number(
-            datos.weatherCode
-        );
+    var lluviaManana =
+        -1;
+
+
+    /*
+     * OBTENER PROBABILIDAD DE MANANA
+     */
+
+
+    if (
+        datos.forecast &&
+        datos.forecast.length > 0 &&
+        datos.forecast[0]
+    ) {
+
+        lluviaManana =
+            Number(
+                datos.forecast[0].rain
+            );
+    }
+
+
+
+    /*
+     * 1.
+     * ESTA LLOVIENDO AHORA
+     */
 
 
     if (
         (
-            codigo >= 51 &&
-            codigo <= 67
+            codigoActual >= 51 &&
+            codigoActual <= 67
         ) ||
 
         (
-            codigo >= 80 &&
-            codigo <= 82
+            codigoActual >= 80 &&
+            codigoActual <= 82
         ) ||
 
-        codigo >= 95
+        codigoActual >= 95
     ) {
 
         ponerTexto(
+
             "weatherAlert",
-            "☂ LLUVIA · LLEVAR PARAGUAS"
+
+            "☂ LLUVIA AHORA · LLEVAR PARAGUAS"
         );
 
         return;
     }
+
+
+
+    /*
+     * 2.
+     * LLUVIA IMPORTANTE PARA HOY
+     */
 
 
     if (
@@ -1516,21 +1613,59 @@ function actualizarAviso(datos) {
 
             "weatherAlert",
 
-            "☂ LLEVAR PARAGUAS · LLUVIA " +
+            "☂ HOY: LLUVIA " +
 
             Math.round(
                 lluviaHoy
             ) +
 
-            "%"
+            "% · LLEVAR PARAGUAS"
         );
 
         return;
     }
 
 
+
+    /*
+     * 3.
+     * LLUVIA IMPORTANTE PARA MANANA
+     */
+
+
+    if (
+        !isNaN(lluviaManana) &&
+        lluviaManana >= 60
+    ) {
+
+        ponerTexto(
+
+            "weatherAlert",
+
+            "☂ MAÑANA: LLUVIA " +
+
+            Math.round(
+                lluviaManana
+            ) +
+
+            "% · LLEVAR PARAGUAS"
+        );
+
+        return;
+    }
+
+
+
+    /*
+     * 4.
+     * SIN ALERTAS IMPORTANTES
+     */
+
+
     ponerTexto(
+
         "weatherAlert",
+
         "✓ SIN AVISOS"
     );
 }
@@ -1566,6 +1701,7 @@ function cargarColoColo() {
             if (
                 xhr.readyState !== 4
             ) {
+
                 return;
             }
 
@@ -1575,7 +1711,9 @@ function cargarColoColo() {
             ) {
 
                 ponerTexto(
+
                     "football",
+
                     "⚽ COLO-COLO · INFORMACIÓN NO DISPONIBLE"
                 );
 
@@ -1584,7 +1722,6 @@ function cargarColoColo() {
 
 
             try {
-
 
                 var datos =
                     JSON.parse(
@@ -1598,7 +1735,9 @@ function cargarColoColo() {
                 ) {
 
                     ponerTexto(
+
                         "football",
+
                         "⚽ COLO-COLO · PRÓXIMO PARTIDO POR CONFIRMAR"
                     );
 
@@ -1647,11 +1786,25 @@ function cargarColoColo() {
             } catch (error) {
 
                 ponerTexto(
+
                     "football",
+
                     "⚽ COLO-COLO · INFORMACIÓN NO DISPONIBLE"
                 );
             }
 
+        };
+
+
+    xhr.onerror =
+        function() {
+
+            ponerTexto(
+
+                "football",
+
+                "⚽ COLO-COLO · INFORMACIÓN NO DISPONIBLE"
+            );
         };
 
 
@@ -1660,9 +1813,15 @@ function cargarColoColo() {
 
 
 
+/* =========================================================
+   FECHA PARTIDO
+   ========================================================= */
+
+
 function fechaPartidoTexto(fecha) {
 
     if (!fecha) {
+
         return "---";
     }
 
@@ -1674,6 +1833,7 @@ function fechaPartidoTexto(fecha) {
     if (
         partes.length !== 3
     ) {
+
         return "---";
     }
 
@@ -1690,6 +1850,7 @@ function fechaPartidoTexto(fecha) {
 
 
     return (
+
         DIAS[
             fechaLocal.getDay()
         ] +
@@ -1721,6 +1882,7 @@ function redondear(valor) {
         valor === null ||
         typeof valor === "undefined"
     ) {
+
         return "--";
     }
 
@@ -1732,6 +1894,7 @@ function redondear(valor) {
     if (
         isNaN(numero)
     ) {
+
         return "--";
     }
 
@@ -1792,19 +1955,6 @@ function mostrarErrorClima(texto) {
 
 function aplicarBordes(color) {
 
-    var ids = [
-        "watch",
-        "header",
-        "clockArea",
-        "information",
-        "weather",
-        "alertArea",
-        "footballArea"
-    ];
-
-
-    var i;
-
     var elemento;
 
 
@@ -1814,6 +1964,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderColor =
             color;
     }
@@ -1825,6 +1976,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderBottomColor =
             color;
     }
@@ -1836,6 +1988,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderBottomColor =
             color;
     }
@@ -1847,6 +2000,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderBottomColor =
             color;
     }
@@ -1858,6 +2012,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderRightColor =
             color;
     }
@@ -1869,6 +2024,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderBottomColor =
             color;
     }
@@ -1880,6 +2036,7 @@ function aplicarBordes(color) {
         );
 
     if (elemento) {
+
         elemento.style.borderBottomColor =
             color;
     }
@@ -1889,6 +2046,9 @@ function aplicarBordes(color) {
         document.getElementsByClassName(
             "themeButton"
         );
+
+
+    var i;
 
 
     for (
@@ -1930,9 +2090,15 @@ function setTheme(tema) {
 
 
     if (!watch) {
+
         return;
     }
 
+
+
+    /*
+     * VERDE
+     */
 
 
     if (
@@ -1942,27 +2108,39 @@ function setTheme(tema) {
         document.body.style.background =
             "#080b06";
 
+
         watch.style.background =
             "#11180c";
 
+
         watch.style.color =
             "#b8d870";
+
 
         aplicarBordes(
             "#4a6228"
         );
 
+
         if (clock) {
+
             clock.style.textShadow =
                 "0 0 14px #93bd39";
         }
 
+
         if (temperature) {
+
             temperature.style.textShadow =
                 "0 0 12px #93bd39";
         }
     }
 
+
+
+    /*
+     * AZUL
+     */
 
 
     if (
@@ -1972,27 +2150,39 @@ function setTheme(tema) {
         document.body.style.background =
             "#03080c";
 
+
         watch.style.background =
             "#07131c";
 
+
         watch.style.color =
             "#70b8d8";
+
 
         aplicarBordes(
             "#315d70"
         );
 
+
         if (clock) {
+
             clock.style.textShadow =
                 "0 0 14px #429bc4";
         }
 
+
         if (temperature) {
+
             temperature.style.textShadow =
                 "0 0 12px #429bc4";
         }
     }
 
+
+
+    /*
+     * BLANCO Y NEGRO
+     */
 
 
     if (
@@ -2002,22 +2192,29 @@ function setTheme(tema) {
         document.body.style.background =
             "#d5d5d0";
 
+
         watch.style.background =
             "#eeeeea";
 
+
         watch.style.color =
             "#111111";
+
 
         aplicarBordes(
             "#333333"
         );
 
+
         if (clock) {
+
             clock.style.textShadow =
                 "none";
         }
 
+
         if (temperature) {
+
             temperature.style.textShadow =
                 "none";
         }
@@ -2027,7 +2224,9 @@ function setTheme(tema) {
     try {
 
         localStorage.setItem(
+
             "casio-theme",
+
             tema
         );
 
@@ -2036,6 +2235,11 @@ function setTheme(tema) {
     }
 }
 
+
+
+/* =========================================================
+   CARGAR TEMA
+   ========================================================= */
 
 
 function cargarTema() {
@@ -2053,9 +2257,11 @@ function cargarTema() {
 
 
         if (guardado) {
+
             tema =
                 guardado;
         }
+
 
     } catch (e) {
 
@@ -2108,8 +2314,10 @@ function comprobarModoNocturno() {
 
         activarModoNoche();
 
+
         modoNocheActivo =
             true;
+
 
     } else {
 
@@ -2119,6 +2327,7 @@ function comprobarModoNocturno() {
 
             modoNocheActivo =
                 false;
+
 
             cargarTema();
         }
@@ -2156,6 +2365,7 @@ function activarModoNoche() {
         watch.style.background =
             "#060906";
 
+
         watch.style.color =
             "#627640";
     }
@@ -2191,20 +2401,27 @@ function iniciar() {
 
     actualizarReloj();
 
+
     actualizarMensaje();
+
 
     cargarTema();
 
+
     comprobarModoNocturno();
+
 
     cargarClima();
 
+
     cargarColoColo();
+
 
 
     /*
      * RELOJ
      */
+
 
     setInterval(
         actualizarReloj,
@@ -2212,15 +2429,18 @@ function iniciar() {
     );
 
 
+
     /*
-     * MENSAJE + NOCHE
+     * MENSAJE + MODO NOCHE
      */
+
 
     setInterval(
 
         function() {
 
             actualizarMensaje();
+
 
             comprobarModoNocturno();
 
@@ -2230,10 +2450,12 @@ function iniciar() {
     );
 
 
+
     /*
      * CLIMA
-     * 10 MINUTOS
+     * CADA 10 MINUTOS
      */
+
 
     setInterval(
         cargarClima,
@@ -2241,10 +2463,12 @@ function iniciar() {
     );
 
 
+
     /*
      * COLO COLO
-     * 30 MINUTOS
+     * CADA 30 MINUTOS
      */
+
 
     setInterval(
         cargarColoColo,
